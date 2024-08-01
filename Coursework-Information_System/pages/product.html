@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <title> Products </title>
+    <meta name="author" content="Dikshya">
+    <meta name="description" content="HTML document">
+    <meta name="keywords" content="HTML">
+    <link rel="stylesheet" href="../css/product.css">
+
+
+    <!--style tag to style html element using internal css-->
+    <style type="text/css">
+        .imageContainer {
+            height: fit-content;
+            width: 50%;
+        }
+
+        #mainImage {
+            height: fit-content;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<!--body tag contains all the section -->
+
+<body class="body">
+    <!--header section to define elements in the head part of the page -->
+    <header>
+        <!--section for navbar-->
+        <section>
+            <nav class="navbar">
+                <h1 class="logo">
+                    <img src="../images/Pink and Black Modern Initials Logo Design (1).png" alt="logo" height="70px"
+                        style="margin-top: -20px;">
+                </h1>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                </ul>
+                <div class="icons"><img class="iconFirst" src="../images/cartIcon.png" height="25px">
+                </div>
+                <div class="icons"><img class="iconSecond" src="../images/searchIcon.png" height="25px"> </div>
+            </nav>
+        </section>
+    </header>
+
+
+    <!--section for MAIN CONTAINER-->
+    <section class="containerMain">
+        <div class="main">
+            <div class="homeImage">
+                <div class="imageContainer">
+                    <img class="mainImage" id="mainImage" src="../images/mainImage.jpg">
+                </div>
+
+                <a href="#display">
+                    <button class="shopNowFirst" type="submit"> Shop Now </button>
+                </a>
+
+                <div class="text">
+                    <h1> Bonsai </h1>
+                    <h2> The Art of Patience</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--What Bonsai Symbolises-->
+    <section class="bonsaiSymbolise">
+        <!--Card First-->
+        <div class="symbolization">
+            <div class="bonsaiFirst">
+                <div class="bonsaiPictureFirst">
+                    <img src="../images/bonsaiA.jpg" class="symbolsOfBonsai" height="380px" width="350px"
+                        style="margin-left: 20px;">
+                    <div class="meanings">
+                        <h1 class="meaningfulBonsai">Ficus Bonsai</h1>
+                        <p class="bonsaiMeaning">Ficus
+                            bonsai is referred to as a
+                            “cheerful
+                            tree” because it is thought to
+                            enhance the moods of
+                            those who are nearby. This bonsai symbolizes unity, new beginnings, abundance, simplicity,
+                            and
+                            the harmony of nature.</p>
+                    </div>
+                </div>
+            </div>
+            <!--Card Second-->
+            <div class="bonsaiSecond">
+                <div class="bonsaiPictureSecond">
+                    <img src="../images/bonsaiB.jpg" class="symbolsOfBonsai" height="380px" width="350px"
+                        style="margin-left: 20px;">
+                    <div class="meanings">
+                        <h1 class="meaningfulBonsai">Azalea Bonsai</h1>
+                        <p class="bonsaiMeaning">
+                            An Azalea bonsai is an especially stunning symbol of femininity. Its bright blossoms
+                            represent
+                            feminine beauty, vulnerability, and gentleness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Card Third-->
+            <div class="bonsaiThird">
+                <div class="bonsaiPictureThird">
+                    <img src="../images/bonsaiC.jpg" class="symbolsOfBonsai" height="380px" width="350px"
+                        style="margin-left: 20px;">
+                    <div class="meanings">
+                        <h1 class="meaningfulBonsai">Jade Bonsai</h1>
+                        <p class="bonsaiMeaning"> Jade bonsai produces positive vibrations and attracts good luck, money
+                            and prosperity into your life. </p>
+                    </div>
+                </div>
+            </div>
+            <!--Card Fourth-->
+            <div class="bonsaiFourth">
+                <div class="bonsaiPictureThird">
+                    <img src="../images/bonsaiD.jpg" class="symbolsOfBonsai" height="380px" width="350px"
+                        style="margin-left: 20px; margin-right: 25px;">
+                    <div class="meanings">
+                        <h1 class="meaningfulBonsai"> Chinese Elm Bonsai</h1>
+                        <p class="bonsaiMeaning">The Chinese Elm is often referred to as the “tree of harmony” because
+                            it symbolizes inner strength, intuition, wisdom, and love. </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--this is for onclick shop now-->
+    <div id="display"></div>
+
+    <!--This section is for new arrivals and sale offer div's-->
+    <section class="containerSecond">
+        <!--main div-->
+        <div class="maindiv">
+            <!--div for left side-->
+            <div class="divFirst">
+                <!--First div of left div-->
+                <div class="subdivFirst">
+                    <div class="displayImage">
+                        <img class="image" src="../images/newArrivals.jpeg" height="490px" width="750px">
+                        <a href="#featuredProducts">
+                            <button class="shopNowSecond" type="submit"> Shop </button>
+                        </a>
+                    </div>
+                </div>
+                <!--Second div of left div-->
+                <div class="subdivSecond">
+                    <div class="displayImage">
+                        <img class="image" src="../images/darkGreen.jpeg" height="490px" width="750px">
+                        <h1 class="saleText"> Sale</h1>
+                        <p class="saleParagraph"> 1 Year Anniversary Offer! <br> 50% off on selected items. </p>
+                        <a href="#saleSection">
+                            <button class="grabButton" type="submit"> Grab Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Div for right side-->
+            <div class="divSecond">
+                <!--first div of right div-->
+                <div class="subdivThird">
+                    <div class="displayImage" id="image1">
+                        <img class="image" src="../images/bonsaiE.png" height="320px" width="455px">
+                    </div>
+                </div>
+                <!--Second div of right div-->
+                <div class="subdivFourth">
+                    <div class="displayImage" id="image2">
+                        <img class="image" src="../images/bonsaiF.jpg" height="320px" width="455px">
+                    </div>
+                </div>
+                <!--Third div of right div-->
+                <div class="subdivFifth">
+                    <div class="displayImage" id="image3">
+                        <img class="image" src="../images/bonsaiG.jpg" height="320px" width="455px">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--Section For Best Selling Container-->
+        <section class="containerThird">
+            <h1 class="bestSellingText" style="margin-top: 120px;">Best Selling</h1>
+            <div class="bestSellingDiv">
+                <!--contents div i.e it contains bonsai and it's origin text-->
+                <div class="contentsDiv">
+                    <div class="bonsai">
+                        <h1 class="bonsaiText"> Bonsai </h1> <br>
+                        <p class="bonsaiParagraph">
+                            Bonsai is an ancient Japanese art form which was given great importance. The term itself
+                            means
+                            “planted in a container”. These adorable and tiny plants mimic the appearance of fully grown
+                            trees
+                            while being a fraction of the size. They provide a zen feel and symbolize peace, harmony and
+                            balance.</p>
+                        <br>
+                        <a href="https://dsfantiquejewelry.com/blogs/interesting-facts/journey-into-the-magical-world-of-bonsai"
+                            target="_blank">
+                            <button class="shopMore" type="submit"> Learn More </button>
+                        </a>
+                    </div>
+                </div>
+                <!--Cards div i.e it contains cards-->
+                <div class="cardsDiv">
+                    <!--card first on cards div-->
+                    <div class="cards">
+                        <!--bonsai image and contents over it-->
+                        <div class="img">
+                            <img class="bonsaiImage" src="../images/bonsaiH.jpg" height="200px" width="250px">
+                            <div class="cartFirst">
+                                <div class="cartContainerFirst">
+                                    <h1 class="cartTextFirst" style="cursor: pointer;" onclick="openpopup()">Add TO Cart
+                                    </h1>
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <!--contents below image -->
+                        <div class="content">
+                            <div class="price">
+                                <h1>Rs.2000</h1>
+                            </div>
+                            <div class="shipping">
+                                <h4> Free Shipping</h4>
+                            </div>
+                            <div class="rating">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+
+                            </div>
+                            <div class="reviews">
+                                <h4>6 Reviews</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--card second on cards div-->
+                    <div class="cards">
+                        <!--bonsai image and contents over it-->
+                        <diV class="img">
+                            <img class="bonsaiImage" src="../images/bonsaiI.jpg" height="200px" width="250px">
+                            <div class="cartSecond">
+                                <div class="cartContainerSecond">
+                                    <h1 class="cartTextSecond" style="cursor: pointer;" onclick="openpopup()"
+                                        onmouseleave="closepopup2()">Add To Cart
+                                    </h1>
+                                </div>
+                            </div>
+                        </diV><br>
+                        <!--contents below image-->
+                        <div class="content">
+                            <div class="price">
+                                <h1>Rs.2500</h1>
+                            </div>
+                            <div class="shipping">
+                                <h4> Free Shipping</h4>
+                            </div>
+                            <div class="rating">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+
+                            </div>
+                            <div class="reviews">
+                                <h4>12 Reviews</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--card three on card div-->
+                    <div class="cards">
+                        <!--bonsai image and contents over it-->
+                        <diV class="img">
+                            <img class="bonsaiImage" src="../images/bonsaiJ.jpg" height="200px" width="250px">
+                            <div class="cartThird">
+                                <div class="cartContainerThird">
+                                    <h1 class="cartTextThird" style="cursor: pointer;" onclick="openpopup()"
+                                        onmouseleave="closepopup()">Add To Cart
+                                    </h1>
+                                </div>
+                            </div>
+                        </diV><br>
+                        <!--contents below picture-->
+                        <div class="content">
+                            <div class="price">
+                                <h1>Rs.3000</h1>
+                            </div>
+                            <div class="shipping">
+                                <h4> Free Shipping</h4>
+                            </div>
+                            <div class="rating">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                            </div>
+                            <div class="reviews">
+                                <h4>8 Reviews</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--card fourth on cards div-->
+                    <div class="cards">
+                        <!--image and contents over it-->
+                        <diV class="img">
+                            <img class="bonsaiPimage" src="../images/bonsaiK.jpg" height="200px" width="250px">
+                            <div class="cartFourth">
+                                <div class="cartContainerFourth">
+                                    <h1 class="cartTextFourth" style="cursor: pointer;" onclick="openpopup()"
+                                        onmouseleave="closepopup()">Add To Cart
+                                    </h1>
+                                    </a>
+                                </div>
+                            </div>
+                        </diV><br>
+
+                        <!--contents below picture-->
+                        <div class="content">
+                            <div class="price">
+                                <h1>Rs.1800</h1>
+                            </div>
+                            <div class="shipping">
+                                <h4> Free Shipping</h4>
+                            </div>
+                            <div class="rating">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+                                <img src="../images/stardfilled.png" height="15px" width="15px">
+
+                            </div>
+                            <div class="reviews">
+                                <h4>15 Reviews</h4>
+                            </div>
+                            <!--This is for on click shop now -->
+                            <div id="featuredProducts"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--featured products-->
+
+        <section class="container3">
+            <div class="featuredContainer">
+                <h1 class="productClass" style="margin-top: 150px;">Featured Produdcts</h1>
+                <div class="box">
+                    <diV class="imageslide">
+                        <img class="imageFeatured" src="../images/bonsaiL.jpeg" height="250px" width="250px">
+
+                    </diV><br>
+                    <div class="content">
+
+                        <div>
+                            <h1 class="bonsaiName">Bonsai Boxwood</h1>
+                            <h1 class="priceFeatured">Rs.1800</h1>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box">
+                    <diV class="imageslide">
+                        <img class="imageFeatured" src="../images/bonsaiM.jpeg" height="250px" width="250px">
+
+                    </diV><br>
+                    <div class="content">
+
+                        <div>
+                            <h1 class="bonsaiName">Bonsai Ficus Religiosa</h1>
+                            <h1 class="priceFeatured">Rs.3000</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="box">
+                    <diV class="imageslide">
+                        <img class="imageFeatured" src="../images/bonsaiN.jpeg" height="250px" width="250px">
+
+                    </diV><br>
+                    <div class="content">
+
+                        <div>
+                            <h1 class="bonsaiName">Bonsai Long Island</h1>
+                            <h1 class="priceFeatured">Rs.2200</h1>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="box">
+                    <diV class="imageslide">
+                        <img class="imageFeatured" src="../images/bonsaiO.jpeg" height="250px" width="250px">
+
+                    </diV><br>
+                    <div class="content">
+
+                        <div>
+                            <h1 class="bonsaiName">Bonsai Malphigia</h1>
+                            <h1 class="priceFeatured">Rs.1900</h1>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box">
+                    <diV class="imageslide">
+
+                        <img class="imageFeatured" src="../images/bonsaiP.jpeg" height="250px" width="250px">
+
+                    </diV><br>
+                    <div class="content">
+                        <div>
+                            <h1 class="bonsaiName">Ligustrum japonica</h1>
+                            <h1 class="priceFeatured">Rs.2800</h1>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://pixabay.com/images/search/bonsai/" target="_blank">
+                    <div class="viewMore">
+                        <h1 class="moreItems">View More...</h1>
+                    </div>
+                </a>
+                <!--This is for onclick grab now button-->
+                <div id="saleSection"></div>
+
+            </div>
+        </section>
+
+        <!--sale section-->
+
+        <section class="saleSection">
+            <div class="textSale">
+                <h1 class="textISale" id="title">Sale Ends In</h1>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="timer" id="timer">
+                <div>
+                    <p id="days" style="margin-left: 3px;"> 00</p>
+                    <h1 class="days"> <span>Days</span></h1>
+                </div>
+                <div>
+                    <p id="hours" style="margin-left: 6px;">00</p>
+                    <h1 class="hours"><span>Hours</span></h1>
+                </div>
+                <div>
+                    <p id="minutes" style="margin-left: 13px;">00</p>
+                    <h1 class="minutes"><span>Minutes</span> </h1>
+                </div>
+                <div>
+                    <p id="seconds" style="margin-left: 8px;">00</p>
+                    <h1 class="seconds"><span>Seconds</span></h1>
+                </div>
+            </div>
+
+            <div class="containerSale">
+                <div class="cardSale">
+                    <div class="imgISale">
+                        <img src="../images/bonsaiQ.png" alt="plant 1" height="300px" width="300px">
+                    </div>
+                    <div class="contentSale">
+                        <div class="productName">
+                            <h1> Japanese maple</h1>
+                        </div>
+                        <div class="price">
+                            <h1>Rs.2200 </h1>
+                            <h4> <s>Rs.4500</s> </h4>
+                        </div>
+                        <div class="Rating">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardSale">
+                    <div class="imgISale">
+                        <img src="../images/bonsaiR.webp" alt="plant 1" height="300px" width="300px">
+                    </div>
+                    <div class="contentSale">
+                        <div class="productName">
+                            <h1> Juniper </h1>
+                        </div>
+                        <div class="price">
+                            <h1>Rs.1200</h1>
+                            <h4> <s>Rs.2800</s> </h4>
+                        </div>
+                        <div class="Rating">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardSale">
+                    <div class="imgISale">
+                        <img src="../images/bonsaiS.jpg" alt="plant 1" height="300px" width="300px">
+                    </div>
+                    <div class="contentsale">
+                        <div class="productName">
+                            <h1> Dwarf Jade </h1>
+                        </div>
+                        <div class="price">
+                            <h1>Rs.1800</h1>
+                            <h4> <s>Rs.3400</s> </h4>
+                        </div>
+                        <div class="Rating">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardSale">
+                    <div class="imgISale">
+                        <img src="../images/bonsaiC.jpg" alt="plant 1" height="300px" width="300px">
+                    </div>
+                    <div class="contentSale">
+                        <div class="productName">
+                            <h1> Azalea </h1>
+                        </div>
+                        <div class="price">
+                            <h1>Rs.1200</h1>
+                            <h4> <s>Rs.1400</s> </h4>
+                        </div>
+                        <div class="Rating">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardSale">
+                    <div class="imgISale">
+                        <img src="../images/bonsaiI.jpg" alt="plant 1" height="300px" width="300px">
+                    </div>
+                    <div class="contentSale">
+                        <div class="productName">
+                            <h1> Bougainvillea </h1>
+                        </div>
+                        <div class="price">
+                            <h1>Rs.1900</h1>
+                            <h4> <s>Rs.3800</s> </h4>
+                        </div>
+                        <div class="Rating">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardSale">
+                    <div class="imgISale">
+                        <img src="../images/bonsaiA.jpg" alt="plant 1" height="300px" width="300px">
+                    </div>
+                    <div class="contentSale">
+                        <div class="productName">
+                            <h1> Wisteria </h1>
+                        </div>
+                        <div class="price">
+                            <h1>Rs.2800</h1>
+                            <h4> <s>Rs.1400</s> </h4>
+
+                        </div>
+                        <div class="Rating">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="../js/product.js"></script>
+
+
+
+
+    <footer class="footer" style="margin-top: 100px;">
+        <div class="containerFooter">
+            <div class="row">
+                <div class="footerClass">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="footerClass">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="#">Kamalpokhari, Kathmandu</a></li>
+                        <li><a href="#">Bonsai&Bloom@gmail.com</a></li>
+                        <li><a href="#">017989667</a></li>
+                    </ul>
+                </div>
+                <div class="footerClass">
+                    <h4>FOLLOW US</h4>
+                    <div class="socialLinks">
+                        <ul>
+                            <li><a href="https://www.facebook.com/" target="_blank"> <img
+                                        src="../images/facebook-icon-png-774.png" height="40px" width="40px">
+                                </a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"> <img
+                                        src="../images/pngfind.com-instagram-png-white-2773517.png" height="30px"
+                                        width="30px" style="margin-left: 6px;">
+                                </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="copyright"> © 2023 Copyright by Bonsai & Bloom. All Rights Reserved. </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../js/product.js"></script>
+
+</body>
+
+</html>

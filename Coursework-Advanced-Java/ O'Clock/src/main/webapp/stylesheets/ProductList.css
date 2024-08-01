@@ -1,0 +1,65 @@
+@charset "ISO-8859-1";
+@charset "ISO-8859-1";
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .add {
+          margin-right: -250px;
+        }
+
+       
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .product-info {
+            width: 80%;
+            margin: auto;
+        }
+        .product-info .products {
+            margin-top: 20px;
+        }
+        .product-info img {
+            width: 100px;
+            height: auto;
+        }
+        .btn {
+		    padding: 8px 16px; /* Adjust padding as needed */
+		    margin-right: 5px;
+		}
+
+		.btn-update {
+		    background-color: #4CAF50; /* Update button color */
+		    color: white;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		}
+		
+		.btn-delete {
+		    background-color: #f44336; /* Delete button color */
+		    color: white;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		    margin-top:20px
+		}

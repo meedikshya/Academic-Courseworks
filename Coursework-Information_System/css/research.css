@@ -1,0 +1,312 @@
+/*css property for whole page*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+
+}
+
+/*css property forbody tag*/
+body {
+    background-color: #cccccc;
+    background-image: url(../images/bonsaiG.jpg);
+    background-repeat: no-repeat;
+
+}
+
+/*styling navigation bar*/
+
+nav {
+    width: 100.9%;
+    margin: -10px;
+    background-color: #7e926f;
+    padding: 18px;
+    position: fixed;
+    z-index: 1;
+}
+
+/*Un-ordered list in navbar*/
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+/*List-items inside navbar and un-ordered list */
+nav ul li {
+    display: inline-block;
+}
+
+/*links on navbar*/
+nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+nav.navbar ul li a {
+    position: relative;
+}
+
+/*after is a pseudo class element*/
+nav.navbar ul li a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+}
+
+/*navbar on mouse hover*/
+nav.navbar ul li a:hover {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1px solid black;
+    background-color: #FCF9F3;
+    color: #7e926f;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+/*logo on navbar*/
+.logo {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 0 10px;
+    position: absolute;
+    margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+    display: block;
+    margin-left: 1350px;
+    margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+    display: block;
+    margin-left: 1410px;
+    margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+    height: 30px;
+}
+
+
+/*logo on navbar*/
+.logo {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 0 10px;
+    position: absolute;
+    margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+    display: block;
+    margin-left: 1350px;
+    margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+    display: block;
+    margin-left: 1410px;
+    margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+    height: 30px;
+}
+
+/*body*/
+body {
+    width: 100%;
+
+}
+
+.headI,
+.headII {
+    position: absolute;
+    margin-top: 90px;
+    margin-left: 50px;
+    color: black;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    line-height: 15px;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 15px 50px;
+    background-color: rgb(167, 176, 164);
+
+}
+
+.headII {
+    margin-left: 800px;
+
+
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.containerFirst {
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 150px;
+    display: flex;
+}
+
+.subDivFirst {
+    height: 550px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    width: 50%;
+    margin-left: 50px;
+}
+
+.subDivSecond {
+    height: 550px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    width: 50%;
+    margin-right: 30px;
+
+}
+
+.containerSecond {
+    height: 300px;
+    width: 70%;
+    margin-left: 360px;
+    box-sizing: border-box;
+    display: block;
+    border: 1px;
+    border-radius: 10px;
+}
+
+.containerSecond,
+.text {
+    position: absolute;
+}
+
+.text {
+    margin-top: -120px;
+    text-align: justify;
+    margin-left: 500px;
+    width: 500px;
+    color: white;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+
+
+/*footer*/
+
+.containerFooter {
+    max-width: 1170px;
+    margin: auto;
+    padding-top: 30px;
+    height: 300px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #969581;
+    padding: 20px 0;
+
+}
+
+.footerClass {
+    width: 25%;
+    padding: 5 15px;
+    margin-left: 80px;
+}
+
+.footerClass h4 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footerClass ul li a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #f3f3f3;
+    display: block;
+    transition: all 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.footerClass ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footerClass .socialLinks li {
+    display: flex;
+    cursor: pointer;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    margin-left: 320px;
+    padding: 20px;
+    color: #454235;
+    margin-top: 50px;
+}

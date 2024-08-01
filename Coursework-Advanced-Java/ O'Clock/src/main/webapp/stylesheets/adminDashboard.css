@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+h1,
+h2 {
+    color: #444;
+}
+h3 {
+    color: #999;
+}
+.menuIcon{
+    height: 25px;
+    width: 25px;
+}
+
+.centerIcon{
+    height: 75px;
+    width: 75px;
+}
+.actionButton {
+    background: #37dc05;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    width: 85px;
+     
+    
+}
+.actionButton:hover {
+    color: #37dc05 ;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #37dc05;
+}
+.logoutButton{
+	background-color:  #ff0303;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+    width: 70px;
+}
+.logoutButton:hover {
+    color:  #37dc05  ;
+    background-color: white;
+    padding: 3px 8px;
+    border: 2px solid #37dc05 ;
+}
+.sectionLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+table {
+    padding: 10px;
+}
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+.sideMenu {
+    position: fixed;
+    background: #B3C8CF ;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.sideMenu .brandName {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sideMenu li {
+    font-size: 24px;
+    padding: 10px 40px;
+    color:  #F4F4F4;
+    display: flex;
+    align-items: center;
+}
+
+.sideMenu li:hover {
+    background: #F4F4F4;
+    color: black ;
+}
+.contentContainer {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #F4F4F4;
+}
+.contentContainer .headingSection {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.contentContainer .headingSection .navigationBar  {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+.contentContainer .headingSection .navigationBar .searchBox  {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+.contentContainer .headingSection .navigationBar .searchBox  input[type=text] {
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 50%;
+}
+.contentContainer .headingSection .navigationBar .searchBox  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contentContainer .headingSection .navigationBar .searchBox button img {
+    width: 30px;
+    height: 30px;
+}
+.contentContainer .headingSection .navigationBar .userAction {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contentContainer .headingSection .navigationBar .userAction img {
+    width: 40px;
+    height: 40px;
+}
+.contentContainer .headingSection .navigationBar .userAction .userImage {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    
+}
+.contentContainer .headingSection .navigationBar .userAction .userImage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.contentContainer .contentSection {
+    position: relative;
+    margin-top: 10vh;
+    min-height: 90vh;
+    background: #f1f1f1;
+}
+.contentContainer .contentSection .cardArea {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contentContainer .contentSection .cardArea  .card {
+    width: 250px;
+    height: 150px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.contentContainer .contentSection .contentArea {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.contentContainer .contentSection .contentArea .recentPayments {
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+.contentContainer .contentSection .contentArea .newUsers {
+    flex: 2;
+    background: white;
+    min-height: 50vh;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+.contentContainer .contentSection .contentArea .new-students table td:nth-child(1) img {
+    height: 40px;
+    width: 40px;
+}
+@media screen and (max-width: 1050px) {
+    .sideMenu li {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 940px) {
+    .sideMenu li span {
+        display: none;
+    }
+    .sideMenu {
+        align-items: center;
+    }
+    .sideMenu li img {
+        width: 40px;
+        height: 40px;
+    }
+    .sideMenu li:hover {
+        background: #f05462;
+        padding: 8px 38px;
+        border: 2px solid white;
+    }
+}
+@media screen and (max-width:536px) {
+    .brandName h1 {
+        font-size: 16px;
+    }
+    .contentContainer .contentSection .cardArea  {
+        justify-content: center;
+    }
+    .sideMenu li img {
+        width: 30px;
+        height: 30px;
+    }
+    .contentContainer .contentSection .contentArea .recentPayments table th:nth-child(2),
+    .contentContainer .contentSection .contentArea .recentPayments table td:nth-child(2) {
+        display: none;
+    }
+}

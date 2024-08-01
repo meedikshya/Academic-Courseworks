@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+
+}
+
+/*styling navigation bar*/
+
+nav {
+  width: 100.9%;
+  margin: -10px;
+  background-color: #7e926f;
+  padding: 18px;
+  position: fixed;
+  z-index: 1;
+}
+
+/*Un-ordered list in navbar*/
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+/*List-items inside navbar and un-ordered list */
+nav ul li {
+  display: inline-block;
+}
+
+/*links on navbar*/
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+nav.navbar ul li a {
+  position: relative;
+}
+
+/*after is a pseudo class element*/
+nav.navbar ul li a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+}
+
+/*navbar on mouse hover*/
+nav.navbar ul li a:hover {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 1px solid black;
+  background-color: #FCF9F3;
+  color: #7e926f;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+/*logo on navbar*/
+.logo {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: whitesmoke;
+  margin: 0 10px;
+  position: absolute;
+  margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+  display: block;
+  margin-left: 1350px;
+  margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+  display: block;
+  margin-left: 1410px;
+  margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+  height: 30px;
+}
+
+
+/*logo on navbar*/
+.logo {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: whitesmoke;
+  margin: 0 10px;
+  position: absolute;
+  margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+  display: block;
+  margin-left: 1350px;
+  margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+  display: block;
+  margin-left: 1410px;
+  margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+  height: 30px;
+}
+
+
+.box {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(6, 90, 21, 0.088), #000308f3), url(../images/leaf.jpg);
+  background-position: center;
+  background-size: cover;
+  /*bg image styling*/
+  display: flex;
+  /* it helps the content to bring in the middle */
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 98%;
+  max-width: 600px;
+}
+
+.input-group {
+  margin-bottom: 30px;
+  position: relative;
+  /*helps the text to be in the box */
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  /*size f the box*/
+  outline: 0;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-size: 15px;
+}
+
+
+label {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  color: lavenderblush;
+  font-weight: 500;
+  cursor: text;
+  transition: 0.3s;
+}
+
+button {
+  padding: 10px;
+  color: rgb(231, 240, 240);
+  outline: none;
+  background: transparent;
+  /* gives a background for the button */
+  border: 1px solid #fff;
+  width: 100%;
+  cursor: pointer;
+  /* gives pointer cursor */
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label {
+  top: -35px;
+  font-size: 14px;
+
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*justifies space between fname and last name*/
+
+}
+
+.row .input-group {
+  flex-basis: 48%;
+  /*space between first name and last name*/
+
+}
+
+.popup {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  /*tick in the center*/
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+
+
+
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  /*position of the popup*/
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.1s, top 1s;
+
+}
+
+.popup img {
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px;
+}
+
+.popup button {
+  width: 100;
+  margin-top: 50px;
+  padding: 10px;
+  background: #6fd649;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/*footer*/
+
+.containerFooter {
+  max-width: 1170px;
+  margin: auto;
+  padding-top: 30px;
+  height: 300px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: #969581;
+  padding: 20px 0;
+
+}
+
+.footerClass {
+  width: 25%;
+  padding: 5 15px;
+  margin-left: 80px;
+}
+
+.footerClass h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footerClass ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 300;
+  color: #f3f3f3;
+  display: block;
+  transition: all 0.3s ease;
+  padding-bottom: 5px;
+}
+
+.footerClass ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footerClass .socialLinks li {
+  display: flex;
+  cursor: pointer;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin-left: 320px;
+  padding: 20px;
+  color: #454235;
+  margin-top: 50px;
+}

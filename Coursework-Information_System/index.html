@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" scontent="width=device-width, initial-scale=1.0">
+  <title>bonsai</title>
+  <meta name="author" content="Drishya">
+  <meta name="description" content="HTML document">
+  <meta name="keywords" content="HTML">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .slider {
+      width: 70%;
+      height: 700px;
+      margin-left: 50px;
+      margin-top: 20px;
+      margin-right: 100px;
+      /*
+      box-sizing property allows us to include the padding and border in an element's total width and height.
+      */
+      box-sizing: border-box;
+      /*The overflow is clipped, and the rest of the content will be invisible*/
+      overflow: hidden;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--header section to define elements in the head part of the page -->
+  <header>
+    <!--section for navbar-->
+    <section>
+      <nav class="navbar">
+        <h1 class="logo">
+          <img src="images/Pink and Black Modern Initials Logo Design (1).png" alt="logo" height="70px"
+            style="margin-top: -20px;">
+        </h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="pages/product.html">Products</a></li>
+          <li><a href="pages/blog.html">Blog</a></li>
+          <li><a href="pages/aboutUs.html">About Us</a></li>
+          <li><a href="pages/contact.html">Contact Us</a></li>
+          <li><a href="pages/research.html">Research</a></li>
+        </ul>
+        <div class="icons"><img class="iconFirst" src="images/cartIcon.png" height="25px">
+        </div>
+        <div class="icons"><img class="iconSecond" src="images/searchIcon.png" height="25px"> </div>
+      </nav>
+    </section>
+  </header>
+
+  <div class="first">
+    <div class="content">
+      <h1>Bonsai: <br> The art of patience</h1>
+      <a href="pages/product.html"><button id="myBtn" onclick="">Shop now!</button></a>
+    </div>
+  </div>
+  </header>
+  <section class="sliderClass">
+    <div class="sclass">
+      <div class="slider">
+        <div id="img">
+          <img src="images/one.jpg" width="90%" height="500px">
+        </div>
+
+      </div>
+      <div class="sliderContent">
+        <h1 align="center">PRE BOOK NOW!!</h1>
+        <p>Get upto 15% off on pre-orders!</p>
+        <a href="pages/product.html"><button>Pre Order</button></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="sample">
+    <div class="scontent">
+      <h1 style="margin-left: -80px;">Bonsai & Bloom</h1>
+      <p style="margin-left: -80px;">Here at bonsai & bloom you can find various types of bonsai from around the world
+      </p>
+      <a href="pages/product.html"><button>Browse Bonsai</button></a>
+    </div>
+    <img src="images/bpreal.png" alt="bonsai">
+  </div>
+  <section>
+    <h1 align="center">Our Services</h1>
+    <div class="cards">
+      <div class="c1">
+        <img src="images/bg.jpeg" alt="bonsaiA" width="489px" height="350px">
+        <div class="content">
+          <h1>How can we Help you?</h1>
+          <p>To answer your issues our customer care experts will be thrilled to help you</p>
+          <a href="pages/contact.html">Contact Us</a>
+        </div>
+      </div>
+      <div class="c2">
+        <img src="images/bbg.jpeg" alt="bonsaiB" width="490px" height="350px">
+        <div class="content">
+          <h1 style="margin-left: 20px;">Our Products!</h1>
+          <p style="margin-left: 20px;">Here and B&B you can find a wide range of bonsai plants found everywhere in our
+            planet.</p>
+          <a href="pages/product.html">Our Products</a>
+        </div>
+      </div>
+      <div class="c3">
+        <img src="images/bbbb.jpeg" alt="bonsaiC" width="490px" height="350px">
+        <div class="content">
+          <h1>Our blogs.</h1>
+          <p>If you have any queries about bonsai you can read our daily blog here.</p>
+          <a href="pages/Blog.html" style="margin-left: 400px;">Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="margin-top: 20px;">
+    <div class="containerFooter">
+      <div class="row">
+        <div class="footerClass">
+          <h4>GET HELP</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <div class="footerClass">
+          <h4>CONTACT</h4>
+          <ul>
+            <li><a href="#">Kamalpokhari, Kathmandu</a></li>
+            <li><a href="#">Bonsai&Bloom@gmail.com</a></li>
+            <li><a href="#">017989667</a></li>
+          </ul>
+        </div>
+        <div class="footerClass">
+          <h4>FOLLOW US</h4>
+          <div class="socialLinks">
+            <ul>
+              <li><a href="https://www.facebook.com/" target="_blank"> <img src="images/facebook-icon-png-774.png"
+                    height="40px" width="40px">
+                </a></li>
+              <li><a href="https://www.instagram.com/" target="_blank"> <img
+                    src="images/pngfind.com-instagram-png-white-2773517.png" height="30px" width="30px"
+                    style="margin-left: 6px;">
+                </a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright"> © 2023 Copyright by Bonsai & Bloom. All Rights Reserved. </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var images = ['images/bonsaiH.jpg', 'images/bonsaik.jpg', 'images/bonsaiG.jpg', 'images/mainImage.jpg', 'images/bonsaiH.jpg'];
+
+    var x = 0;
+    var imgs = document.getElementById('img');
+    //The setInterval() calls a function at theintervals (in milliseconds). 
+    setInterval(slider, 3000);
+
+    function slider() {
+
+      if (x < images.length) {
+        x = x + 1;
+      }
+
+      else {
+        x = 1;
+      }
+
+
+      imgs.innerHTML = "<img src=" + images[x - 1] + ">";
+    }
+
+  </script>
+</body>
+
+</html>

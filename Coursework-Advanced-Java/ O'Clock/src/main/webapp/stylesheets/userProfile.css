@@ -1,0 +1,218 @@
+@charset "ISO-8859-1";
+
+body {
+  background: linear-gradient(to right, #3fb6a8, #7ed386);
+  box-sizing: border-box;
+}
+
+.container {
+  background: #fff;
+  width: 1000px;
+  height: 900px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 5%;
+  box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.5);
+}
+
+.logo {
+  float: right;
+  margin-right: 12px;
+  margin-top: 12px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #3dbb3d;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.leftbox {
+  float: left;
+  top: -5%;
+  left: 5%;
+  position: absolute;
+  width: 15%;
+  height: 110%;
+  background: linear-gradient(to right, #3fb6a8, #7ed386);
+  box-shadow: 3px 3px 10px rgba(119, 119, 119, 0.5);
+}
+
+nav a {
+  list-style: none;
+  padding: 20px;
+  color: #fff;
+  font-size: 1.1em;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #3fb6a8;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.rightbox {
+  float: right;
+  margin-left: 20%;
+  margin-bottom: 20%;
+  width: 70%;
+}
+
+.tabShow {
+  position: absolute;
+  width: 70%;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #7ed386;
+  font-size: 1em;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  color: #777;
+  font-family: "Roboto", sans-serif;
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 14px;
+  /* Changed font size for better readability */
+  letter-spacing: 1px;
+  margin-left: 2px;
+}
+
+.input,
+p {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #3fb6a8, rgba(126, 211, 134, 0.5)) 1 0%;
+  border-top: 0;
+  width: 80%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9em;
+  /* Changed font size for better readability */
+  padding: 7px 0;
+  color: #070707;
+  margin-bottom: 10px;
+  /* Added margin bottom for spacing */
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: 0;
+  padding: 7px 15px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 10px;
+  /* Added margin right for spacing */
+  border-radius: 5px;
+}
+
+.btn-update {
+  background-color: #4caf50;
+  /* Changed update button color */
+  color: #fff;
+}
+
+.btn-update:hover {
+  background-color: #45a049;
+  /* Changed update button hover color */
+}
+
+.btn-delete {
+  background-color: #ff0000;
+  /* Changed delete button color */
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+  /* Changed delete button hover color */
+}
+
+.btn-go-back {
+  background-color: #4285f4;
+  /* Changed go back button color */
+  color: #fff;
+}
+
+.btn-go-back:hover {
+  background-color: #3367d6;
+  /* Changed go back button hover color */
+}
+
+.user-image-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Added position relative for absolute positioning */
+}
+
+.user-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Ensures the image is on top of the file input */
+}
+
+.upload-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2; /* Ensures the file input is on top of the image */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: 0;
+  padding: 7px 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.btn-update {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-update:hover {
+  background-color: #45a049;
+}
+
+.btn-delete {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+}
+
+.btn-go-back {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.btn-go-back:hover {
+  background-color: #3367d6;
+}
+
+ 

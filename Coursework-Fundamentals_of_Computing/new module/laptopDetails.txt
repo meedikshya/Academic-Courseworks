@@ -1,0 +1,5 @@
+Razer Blade, Razer,         $2000,129, i7 7th Gen, GTX 3060
+XPS,         Dell,         $1976,19, i5 9th Gen, GTX 3070
+Alienware, Alienware, $1978,35, i5 9th Gen, GTX 3070
+Swift 7, Acer,         $900,8, i5 9th Gen, GTX 3070
+Macbook Pro 16, Apple,         $3500,24, i5 9th Gen, GTX 3070

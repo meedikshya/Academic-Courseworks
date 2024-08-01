@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Blog Page" />
+	<meta name="keywords" content="Coursework" />
+	<meta name="author" content="Siddhanta Shrestha" />
+	<link rel="stylesheet" href="../css/blog.css">
+
+	<title>Blog</title>
+	<!--style tag to style html element using internal css to correctly implement the java used-->
+	<style>
+		#more {
+			display: none;
+		}
+
+		#moreII {
+			display: none;
+		}
+
+		#moreIII {
+			display: none;
+		}
+
+		#moreIV {
+			display: none;
+		}
+
+		#moreV {
+			display: none;
+		}
+	</style>
+</head>
+
+<!--body tag contains all the section -->
+
+<body>
+	<header>
+		<!--section for navbar-->
+		<section>
+			<nav class="navbar">
+				<h1 class="logo">
+					<img src="../images/Pink and Black Modern Initials Logo Design (1).png" alt="logo" height="70px"
+						style="margin-top: -20px;">
+				</h1>
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="product.html">Products</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="aboutUs.html">About Us</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="research.html">Research</a></li>
+				</ul>
+				<div class="icons"><img class="iconFirst" src="../images/cartIcon.png" height="25px">
+				</div>
+				<div class="icons"><img class="iconSecond" src="../images/searchIcon.png" height="25px"> </div>
+			</nav>
+		</section>
+	</header>
+
+	<div class="banner">
+		<div class="container"><!--For the cover of the blog page-->
+			<h1 class="banner-title">
+				<span>Plant.</span>Design Blog
+			</h1>
+			<p>Everything you want to know about the plants</p>
+		</div>
+	</div>
+	</header>
+	<!-- End of header --->
+
+	<!-- blog -->
+	<section class="blog" id="blog">
+		<div class="container">
+			<div class="title">
+				<h2>Latest blogs</h2>
+			</div>
+			<div class="blog-content">
+				<!--first item of the blog - Technology-->
+				<div class="blog-item">
+					<div class="blog-img">
+						<img src="../images/tech.jpg" alt="">
+					</div>
+					<div class="blog-text">
+						<span>26 December, 2022</span>
+						<h2>Technology has taken over the world.</h2>
+						<p>In recent times, technology has taken over. Technology is an integral part of our everyday
+							life.
+							As bad as it may sound, technology plays a major role in connecting us to oppurtunities for
+							almost anything we require.
+							Despite the physical, economic <span id="dots">...</span> <span id="more">and
+								psychological limitations that may come with the use of technology, there is a distinct
+								advantage for all of us to actively explore and use the digital tools.
+								<br>
+								<br>
+								In the past few decades, technology offers society with a huge array of new
+								communication capabilities, such as employment,education, health, commerce, banking and
+								social networking websites.
+								In the last few decades, technology has become the necessity rather than the exception.
+								Anything a human can do, a robot can do better. The modern technology might be
+								overwhelming but it leads us to ask the question, would it be a bad thing if the jobs
+								currently done by huamns were replaced by robots?
+							</span> <!--Span used for implementing java in the codes-->
+						</p>
+						<button id="myBtn" onclick="myFunction()">Read More</button>
+					</div>
+				</div>
+				<!--End of first item-->
+
+				<!--second item of the blog - Positive Impacts of Technology-->
+				<div class="blog-item">
+					<div class="blog-img">
+						<img src="../images/tech2.jpg" alt="">
+					</div>
+					<div class="blog-text">
+						<span>26 December, 2022</span>
+						<h2>Technology as a blessing</h2>
+						<p>Technology holds the promise of making our lives better. It reduces the need for humans to
+							perform many taks.
+							Information sharing, communication, educatiom, self employment are some of the many
+							advantages technology has bestowed upon us.
+							Technology has made the lives<span id="dotII">...</span> <span id="moreII"> of us
+								humans a lot easier.
+								<br>
+								<br>
+								Some of the major positive impacts of technology are:<br>
+								We can store and manage our daily schedule using technology.<br>
+								Artificial intelligence powered computers will check for problems instantly.<br>
+								PLays a huge role in making more sustainable economy.<br>
+								Connectivity will make travel less essential but at the same time, travel will become
+								more environmentally friendly(trains powered by electricity from renewable sources)
+							</span>
+						</p>
+						<button id="myBtnII" onclick="myFunctionII()">Read More</button>
+					</div>
+				</div>
+				<!--End of second item-->
+
+				<!--third item of the blog - Negative Impacts of Technology-->
+				<div class="blog-item">
+					<div class="blog-img">
+						<img src="../images/tech3.jpg" alt="">
+					</div>
+					<div class="blog-text">
+						<span>26 December, 2022</span>
+						<h2>Negative impacts of Technology</h2>
+						<p>Technology carries risks of its own. It will increasingly create social, ethical, political
+							and security challenges.
+							It may causes various problems like health problems, expensive technology, security/lack of
+							privacy.<br><br>
+
+							Some of the major negative impacts technology has are:<br><br>
+							<b>Face to face interaction:</b>people mostly like <span id="dotIII">...</span> <span
+								id="moreIII">online communication rather than real conversations so people tend
+								to become more introverted.<br><br>
+								<b>Social disconnect:</b> Although internet has reduced technical distances between
+								people, the emotional distance is increased in some aspects.<br><br>
+								<b>Job loss:</b> Job losses may occur due to the takeover of AI.<br>
+							</span>
+						</p>
+						<button id="myBtnIII" onclick="myFunctionIII()">Read More</button>
+					</div>
+				</div>
+				<!--End of third item-->
+
+				<!--fourth item of the blog - Impact of Technology in Selling Bonsai-->
+				<div class="blog-item">
+					<div class="blog-img">
+						<img src="../images/tech4.png" alt="">
+					</div>
+					<div class="blog-text">
+						<span>26 December, 2022</span>
+						<h2>Technology in Bonsai Business</h2>
+						<p>In the past few decades, the e-commerce industry has grown significantly.
+							Technology has made the relationship of a supplier and a consumer a lot better.
+							Every type of <span id="dotIV">...</span> <span id="moreIV"> business in the
+								industry has been affected.
+								The business involved in bonsai is no exception.
+								<br>
+								<br>
+								The rise of technology has made the lives of consumers a lot easier.
+								Consumers get better shopping experience.
+								Technology has changed the method of transaction from cash to cards.
+								Anyone can purchase bonsai plants at the click of a button and receive the product at
+								their doorsteps.
+								<br>
+								<br>
+								Consumers get to do their research about the plants they want.
+								In the previous era, people had to gain their own experience to grow plants in a proper
+								manner.
+								But now, with the rise of technology, a simple search can give you all the information
+								you require about a plant.
+								This promotes the selling of bonsai plants as what was once considered a very difficult
+								task, now can be done at home with just a bit of help from the internet.
+							</span>
+						</p>
+						<button id="myBtnIV" onclick="myFunctionIV()">Read More</button>
+					</div>
+				</div>
+				<!--End of fourth item-->
+
+				<!--fifth item of the blog - Conclusion-->
+				<div class="blog-item">
+					<div class="blog-img">
+						<img src="../images/tech5.jpg" alt="">
+					</div>
+					<div class="blog-text">
+						<span>26 December, 2022</span>
+						<h2>Conclusion</h2>
+						<p>Technology has an impact on almost everybody that has access to them and that the internet
+							has changed society and how we live.
+							Technology brings people from different aprts of the world together to communicate with each
+							other across the globe.
+							It gives an oppurtunity to meet new people online and establish a<span id="dotV">...</span>
+							<span id="moreV"> friendship, increase oppurtunities
+								for education.
+
+								<br>
+								<br>
+								Undoubtedly, gadgets have really made peoples life simple and entertaining but
+								information, media and technical skills are needed for the use of technology.
+								Technology can have positive impact on our lives but we still have to be careful when
+								using it because we may suffer from some negative impacts through its use.
+								We have to be wise in using the ICT gadgets. Thus, technology has been the new prodigy
+								of the modern age which has been accessible in our everyday life with a confusing mix of
+								guranteed benefits with some problems.
+							</span>
+						</p>
+						<button id="myBtnV" onclick="myFunctionV()">Read More</button>
+					</div>
+				</div>
+				<!--End of fifth item-->
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer" style="margin-top: 00px;">
+		<div class="containerFooter">
+			<div class="row">
+				<div class="footerClass">
+					<h4>GET HELP</h4>
+					<ul>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Shipping</a></li>
+						<li><a href="#">Returns</a></li>
+						<li><a href="#">Order Status</a></li>
+						<li><a href="#">Payment Options</a></li>
+					</ul>
+				</div>
+				<div class="footerClass">
+					<h4>CONTACT</h4>
+					<ul>
+						<li><a href="#">Kamalpokhari, Kathmandu</a></li>
+						<li><a href="#">Bonsai&Bloom@gmail.com</a></li>
+						<li><a href="#">017989667</a></li>
+					</ul>
+				</div>
+				<div class="footerClass">
+					<h4>FOLLOW US</h4>
+					<div class="socialLinks">
+						<ul>
+							<li><a href="https://www.facebook.com/" target="_blank"> <img
+										src="../images/facebook-icon-png-774.png" height="40px" width="40px">
+								</a></li>
+							<li><a href="https://www.instagram.com/" target="_blank"> <img
+										src="../images/pngfind.com-instagram-png-white-2773517.png" height="30px"
+										width="30px" style="margin-left: 6px;">
+								</a></li>
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="copyright"> © 2023 Copyright by Bonsai & Bloom. All Rights Reserved. </div>
+
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+	<!-- End of blog -->
+
+	<!--Javascript for using the ReadMore and ReadLess button-->
+	<!--Javascirpt-->
+	<!--script tag to implement internal javascript-->
+	<script>
+
+		function myFunction() {
+			var dots = document.getElementById("dots");
+			var moreText = document.getElementById("more");
+			var btnText = document.getElementById("myBtn");
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+
+
+		function myFunctionII() {
+			var dots = document.getElementById("dotII");
+			var moreText = document.getElementById("moreII");
+			var btnText = document.getElementById("myBtnII");
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+
+
+		function myFunctionIII() {
+			var dots = document.getElementById("dotIII");
+			var moreText = document.getElementById("moreIII");
+			var btnText = document.getElementById("myBtnIII");
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+
+
+		function myFunctionIV() {
+			var dots = document.getElementById("dotIV");
+			var moreText = document.getElementById("moreIV");
+			var btnText = document.getElementById("myBtnIV");
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+
+		function myFunctionV() {
+			var dots = document.getElementById("dotV");
+			var moreText = document.getElementById("moreV");
+			var btnText = document.getElementById("myBtnV");
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+	</script>
+
+	<!---- footer ---->
+</body>
+
+</html>

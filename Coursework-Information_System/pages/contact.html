@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/contact.css">
+    <script src="https://kit.fontawesome.com/12441cbf0c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section>
+        <nav class="navbar">
+            <h1 class="logo">
+                <img src="../images/Pink and Black Modern Initials Logo Design (1).png" alt="logo" height="70px"
+                    style="margin-top: -20px;">
+            </h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="research.html">Research</a></li>
+            </ul>
+            <div class="icons"><img class="iconFirst" src="../images/cartIcon.png" height="25px">
+            </div>
+            <div class="icons"><img class="iconSecond" src="../images/searchIcon.png" height="25px"> </div>
+        </nav>
+    </section>
+    <div class="box">
+        <form>
+            <div class="row">
+                <div class="input-group">
+                    <!--same class is given in all so that names numbers comes separately and doesnt compil in same place-->
+                    <input type="text" id="Firstname" required>
+                    <label for="name">First Name</label>
+                </div>
+                <div class="input-group">
+
+                    <input type="text" id="lastname" required>
+                    <label for="name">Last Name</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="number" required>
+                <label for="number">Number</label>
+
+            </div>
+            <div class="input-group">
+                <input type="text" id="Email" required>
+                <label for="Email">Email</label>
+            </div>
+            <div class="input-group">
+                <textarea name="Messagebox" id="Messagebox" rows="10"
+                    required></textarea><!-- we used requred so that the text can mobe when focus and valid was used in the css file -->
+                <label for="Messagebox">Message</label>
+
+                <button type="submit" onclick="validateform();openpopup()">SUBMIT</button>
+            </div>
+
+            <div class="popup" id="popup">
+                <img src="../images/tick.png">
+                <h2>Thank You</h2>
+                <p>Your details have been submitted succesfully. Thanks!</p>
+                <button type="button"
+                    onclick="window.location.reload()">OK</button><!--by using window.location.reload() we can reload the page after ok is clicked-->
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer" style="margin-top: 0px;">
+        <div class="containerFooter">
+            <div class="row">
+                <div class="footerClass">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="footerClass">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="#">Kamalpokhari, Kathmandu</a></li>
+                        <li><a href="#">Bonsai&Bloom@gmail.com</a></li>
+                        <li><a href="#">017989667</a></li>
+                    </ul>
+                </div>
+                <div class="footerClass">
+                    <h4>FOLLOW US</h4>
+                    <div class="socialLinks">
+                        <ul>
+                            <li><a href="https://www.facebook.com/" target="_blank"> <img
+                                        src="../images/facebook-icon-png-774.png" height="40px" width="40px">
+                                </a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"> <img
+                                        src="../images/pngfind.com-instagram-png-white-2773517.png" height="30px"
+                                        width="30px" style="margin-left: 6px;">
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="copyright"> © 2023 Copyright by Bonsai & Bloom. All Rights Reserved. </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!--end of inout and label-->
+    <!--starting of script-->
+    <script type="text/javascript">
+
+        let popup = document.getElementById("popup");
+        function openpopup() {
+            popup.classList.add("open-popup");
+            event.preventDefault();//this tag stops the page from getting refreshed
+        }
+        function closepopup() {
+            popup.classList.remove("open-popup");
+
+        }
+
+
+        function validateform() {
+
+            var name = document.getElementById("Firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var number = document.getElementById("number").value;
+            var email = document.getElementById("Email").value;
+
+
+            if (name == null || name == "") {
+                alert("Firstname can't be blank");
+            }
+            else if
+                (lastname == null || lastname == "") {
+                alert("Lastname can't be blank");
+            }
+            else if (number == null || number == "") {
+                alert("Number can't be null");
+            }
+
+            else if (number.length < 10) {
+                alert("Number must be at least of 10 character");
+            }
+
+            else if (email == null || email == "") {
+                alert("Email can't be blank");
+            }
+            else {
+                return true;
+            }
+            callback();//callback() helps to run popup function only after the validation is completed
+
+        }
+        //end of script
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
