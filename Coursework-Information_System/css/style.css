@@ -1,0 +1,466 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/*is going to set the body background color*/
+body {
+  background-color: rgba(168, 166, 166, 0.249);
+}
+
+/*sets the header spacing*/
+header {
+  margin: 0;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.277);
+  z-index: 1;
+}
+
+
+/*styling navigation bar*/
+
+nav {
+  width: 100.9%;
+  margin: -10px;
+  background-color: #7e926f;
+  padding: 18px;
+  position: fixed;
+  z-index: 1;
+}
+
+/*Un-ordered list in navbar*/
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+/*List-items inside navbar and un-ordered list */
+nav ul li {
+  display: inline-block;
+}
+
+/*links on navbar*/
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+nav.navbar ul li a {
+  position: relative;
+}
+
+/*after is a pseudo class element*/
+nav.navbar ul li a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+}
+
+/*navbar on mouse hover*/
+nav.navbar ul li a:hover {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 1px solid black;
+  background-color: #FCF9F3;
+  color: #7e926f;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+/*logo on navbar*/
+.logo {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: whitesmoke;
+  margin: 0 10px;
+  position: absolute;
+  margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+  display: block;
+  margin-left: 1350px;
+  margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+  display: block;
+  margin-left: 1410px;
+  margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+  height: 30px;
+}
+
+
+/*logo on navbar*/
+.logo {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: whitesmoke;
+  margin: 0 10px;
+  position: absolute;
+  margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+  display: block;
+  margin-left: 1350px;
+  margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+  display: block;
+  margin-left: 1410px;
+  margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+  height: 30px;
+}
+
+
+
+
+
+
+
+/*The first content of our webpage where there is a bg image and elements are listed inside of it*/
+.first {
+
+  height: 100vh;
+  background-image: url(../images/boo.jpg);
+  background-size: cover;
+  padding-top: 250px;
+  padding-left: 50%;
+  background-attachment: fixed;
+}
+
+/*Gives the content and   */
+.first .content {
+  width: 600px;
+  height: 50vh;
+  display: flex;
+  padding-top: 90px;
+  border-radius: 20px;
+}
+
+.first .content h1 {
+  color: black;
+  height: 80px;
+  padding-left: 200px;
+  font-size: 3em;
+}
+
+.first .content button {
+  height: 20px;
+  margin-top: 150px;
+  margin-left: -300px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgb(26, 57, 26);
+  color: whitesmoke;
+  font-weight: bold;
+  border: none;
+  box-shadow: 8px 8px 8px #888888;
+  transition: 0.7s ease-out;
+}
+
+.first .content button:hover {
+  transition: 0.7s ease-in;
+  color: whitesmoke;
+  transform: scale(1.3);
+  background-color: rgb(33, 76, 33);
+  box-shadow: 2px 2px 8px #888888;
+}
+
+.cards {
+  width: 90%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+
+.cards img {
+  cursor: pointer;
+  padding: 30px;
+}
+
+.c1 {
+  height: 600px;
+  width: 500px;
+}
+
+.c2 {
+  height: 600px;
+  width: 500px;
+}
+
+.c3 {
+  height: 600px;
+  width: 500px;
+}
+
+
+.cards .content a {
+  color: black;
+  font-size: 1.3em;
+  margin-left: 300px;
+}
+
+.cards .content p {
+  color: rgb(77, 76, 76);
+}
+
+.sliderClass {
+  background-image: url(../images/bbbb.jpeg);
+}
+
+.sclass {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.sliderContent {
+  background-image: url(../images/darkGreen.jpeg);
+  height: 440px;
+  width: 65%;
+  margin-top: 100px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  margin-top: 27px;
+  margin-right: 50px;
+}
+
+
+.sliderContent h1 {
+  font-size: 2em;
+  margin-top: 100px;
+  font-weight: 500px;
+  color: white;
+}
+
+.sliderContent p {
+  color: white;
+  font-weight: 500px;
+  padding-top: 30px;
+  text-align: justify;
+  font-size: 1.4em;
+  padding-left: 170px;
+}
+
+.sliderContent button {
+  background: rgb(215, 212, 212);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500px;
+  border-radius: 50px;
+  margin-left: 250px;
+  margin-top: 40px;
+  transition: 0.6s ease-out;
+  box-shadow: 5px 5px 10px rgb(40, 40, 40);
+  color: black;
+  font-weight: 400;
+}
+
+.sliderContent button:hover {
+  transition: 0.6s ease-in;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 10px black;
+}
+
+
+.sample {
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(45deg, rgb(97, 113, 97), rgb(179, 194, 179));
+  margin-top: -200px;
+  margin-bottom: 100px;
+  display: flex;
+  border: 1px solid skyblue;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+.sample img {
+  width: 450px;
+  height: 500px;
+  margin-left: 200px;
+  transition: 0.6s ease-out;
+}
+
+.sample img:hover {
+  opacity: 100%;
+  transition: 0.6s ease-in;
+  transform: scale(1.1);
+}
+
+.sample .scontent {
+  font-size: 2em;
+  padding-left: 20%;
+  padding-top: 7%;
+  color: beige;
+  width: 50%;
+}
+
+.sample .scontent h1 {
+  color: beige;
+}
+
+.sample .scontent button {
+  background: #ccdcca;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 50px;
+  margin-left: 150px;
+  margin-top: 40px;
+  transition: 0.6s ease-out;
+  box-shadow: 5px 5px 10px rgb(40, 40, 40);
+  color: black;
+  font-weight: 400;
+}
+
+.sample .scontent button:hover {
+  transition: 0.6s ease-in;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 10px black;
+}
+
+.containerFooter {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/*footer*/
+
+.containerFooter {
+  max-width: 1170px;
+  margin: auto;
+  padding-top: 30px;
+  height: 300px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: #969581;
+  padding: 20px 0;
+
+}
+
+.footerClass {
+  width: 25%;
+  padding: 5 15px;
+  margin-left: 80px;
+}
+
+.footerClass h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footerClass ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 300;
+  color: #f3f3f3;
+  display: block;
+  transition: all 0.3s ease;
+  padding-bottom: 5px;
+}
+
+.footerClass ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footerClass .socialLinks li {
+  display: flex;
+  cursor: pointer;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin-left: 320px;
+  padding: 20px;
+  color: #454235;
+  margin-top: 50px;
+}

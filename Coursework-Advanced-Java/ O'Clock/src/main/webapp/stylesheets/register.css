@@ -1,0 +1,283 @@
+@charset "ISO-8859-1";
+
+/* CSS for register form */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    user-select: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.cover__page{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/ice-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 1;
+    min-height: auto;
+}
+
+#user:checked ~ label .form-wrapper {
+    visibility: visible;
+    opacity: 1;
+}
+
+.form-wrapper__content {
+    position: absolute;
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #424754;
+    border-radius: 5px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+
+/* .form-signup {
+    display: none;
+}  */
+
+.default{
+    display: block;
+}
+
+:target {
+    display:block;
+}
+
+:target ~ .default {
+    display:none;
+}
+
+
+.form-title {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #7a3cc7;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+
+.input-container {
+    margin: 15px;
+    border-radius: 1px;
+}
+
+.input-container__content {
+    position: relative;
+    width: 100%;
+    display: table;
+}
+
+.user-icon {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    font-size: 1.3rem;
+    color: #7a3cc7;
+    text-rendering: auto;
+    top: 12px;
+    left: 15px;
+    display: inline;
+    outline: none;
+    cursor: pointer;
+}
+
+.form-field {
+    display: block;
+    width: 100%;
+    
+    padding-left: 60px;
+    font-size: 1.0rem;
+    line-height: 3.3rem;
+    background: #f6f6f6;
+    border: none;
+    resize: vertical;
+    outline: none;
+    transition: .4s;
+}
+
+.lable-format {
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    left: 15px;
+    z-index: 1;
+    transition: .3s bottom ease;
+}
+
+.form-field:focus {
+    background: #fff;
+}
+
+.form-field:focus + .lable-format {
+    bottom: 90%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    opacity: 1;
+    background: #fff;
+    outline: none;
+    padding: 0px 10px 0px 10px;
+}
+
+.form-field:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form-field:focus:-moz-placeholder {
+    color: transparent;
+}
+
+.form-field:focus,
+select:focus {
+    border-color: #7a3cc7;
+    box-shadow: 0 0 3px #7a3cc7;
+}
+
+.forgot-password {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.signin-login {
+    margin: 20px 15px 15px 15px;
+}
+
+.login {
+    margin: 15px;
+}
+
+.btn-login {
+    font-size: 1.15rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    line-height: 2rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-image: linear-gradient(to right top, #8b49dc, #7a3cc7, #6a2fb3, #5a229f, #4a148c);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+
+.btn-login:hover {
+    background: #8b49dc;
+    border-radius: 3px;
+}
+
+.signup-text {
+    margin: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+
+.signup-text{
+    text-align: center;
+    margin: 15px 0px 5px 0px;
+}
+
+.social-media__content{
+    display: flex;
+    justify-content: center;
+}
+
+/*
+== Rounding contact media icons ==
+*/
+
+.facebook i {
+    font-size: 1.3em;
+    width: 2em;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 5em;
+    color: #fff;
+    background: #3b5998;
+    box-shadow:0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+    margin: 10px;
+    transition: 1s;
+}
+
+.twitter i{
+    font-size: 1.3em;
+    width: 2em;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 5em;
+    color: #fff;
+    background:  #1da1f2;
+    box-shadow:0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+    margin: 10px;
+    transition: 1s;
+}
+
+.instagram i {
+    font-size: 1.3em;
+    width: 2em;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 5em;
+    color: #fff;
+    background:  #c32aa3;
+    box-shadow:0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+    margin: 10px;
+    transition: 1s;
+}
+
+.facebook i:hover, .twitter i:hover, .instagram i:hover{
+    transform: scale(1.1);
+}
+
+.create,
+.create1{
+    font-size: 0.99rem;
+    text-align: center;
+    color:#7a3cc7;
+    font-weight: 500;
+    margin: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+
+.create1{
+    margin: 5px 0px 15px 0px;
+}
+
+.links{
+    text-decoration: none;
+    color:#7a3cc7;
+}
+
+
+
+

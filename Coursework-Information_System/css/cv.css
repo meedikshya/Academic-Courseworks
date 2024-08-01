@@ -1,0 +1,104 @@
+div {
+    border-radius: 5px;
+    margin: 20px 10px;
+}
+
+.cv {
+    width: 1000px;
+    margin-left: 250px;
+}
+
+
+
+img {
+    margin-left: -10px;
+    position: absolute;
+}
+
+#header {
+    z-index: 1;
+    height: 300px;
+    width: 98%;
+    background-color: #668284;
+    margin-bottom: 10px
+}
+
+#name {
+    position: absolute;
+    float: left;
+    margin-left: 400px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+#email {
+    float: right;
+    margin-right: 300px;
+    margin-top: 100px;
+    font-size: 20px;
+    font-family: Verdana, sans-serif;
+    color: #ffffff;
+}
+
+#contact {
+    margin-left: 41%;
+    font-size: 20px;
+    font-family: Verdana, sans-serif;
+    color: #ffffff;
+}
+
+a:hover {
+    font-weight: 600;
+}
+
+.main {
+    background-color: #f6f6f6;
+    padding: 20px;
+}
+
+#footer {
+    height: 40px;
+    clear: both;
+    position: relative;
+    background-color: #C1E3E1;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+
+table {
+    margin-left: 50px;
+}
+
+
+td {
+    padding: 10px;
+    border-style: initial;
+    border: 1px solid #668284;
+}
+
+#course-name {
+    font-weight: bold;
+    padding: 10px;
+}
+
+#company-name {
+    height: 2px;
+    text-decoration: underline;
+}
+
+#job-title {
+    height: 5px;
+}
+
+.job-duration {
+    float: right;
+}
+
+#heading {
+    font-weight: bold;
+}

@@ -1,0 +1,923 @@
+SQL> CREATE USER Dikshya_Sharma_Coursework IDENTIFIED BY dikshya;
+
+User created.
+
+SQL> GRANT CONNECT, RESOURCE TO Dikshya_Sharma_Coursework;
+
+Grant succeeded.
+
+SQL> CONNECT Dikshya_Sharma_Coursework/dikshya;
+Connected.
+SQL> CREATE TABLE Vendor (
+  2      Vendor_Id NUMBER PRIMARY KEY,
+  3      Vendor_Name VARCHAR2(20) NOT NULL,
+  4      Vendor_Contact VARCHAR2(50) UNIQUE,
+  5      Vendor_Address VARCHAR2(50)
+  6  );
+
+Table created.
+
+SQL> DESC Vendor;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ VENDOR_ID                                 NOT NULL NUMBER
+ VENDOR_NAME                               NOT NULL VARCHAR2(20)
+ VENDOR_CONTACT                                     VARCHAR2(50)
+ VENDOR_ADDRESS                                     VARCHAR2(50)
+
+SQL> CREATE TABLE Product_Category (
+  2      Product_Category_Id NUMBER PRIMARY KEY,
+  3      Product_Category_Name VARCHAR2(20) UNIQUE NOT NULL
+  4  );
+
+Table created.
+
+SQL> DESC Product_Category;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PRODUCT_CATEGORY_ID                       NOT NULL NUMBER
+ PRODUCT_CATEGORY_NAME                     NOT NULL VARCHAR2(20)
+
+SQL> CREATE TABLE Product (
+  2      Product_Id NUMBER PRIMARY KEY,
+  3      Product_Name VARCHAR2(20) NOT NULL,
+  4      Stock_Quantity NUMBER CHECK (Stock_Quantity >= 0) NOT NULL,
+  5      Unit_Price NUMBER(10, 2) NOT NULL,
+  6      Product_Category_Id NUMBER,
+  7      Vendor_Id NUMBER,
+  8      FOREIGN KEY (Product_Category_Id) REFERENCES Product_Category(Product_Category_Id),
+  9      FOREIGN KEY (Vendor_Id) REFERENCES Vendor(Vendor_Id)
+ 10  );
+
+Table created.
+
+SQL> 
+SQL> DESC Product;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PRODUCT_ID                                NOT NULL NUMBER
+ PRODUCT_NAME                              NOT NULL VARCHAR2(20)
+ STOCK_QUANTITY                            NOT NULL NUMBER
+ UNIT_PRICE                                NOT NULL NUMBER(10,2)
+ PRODUCT_CATEGORY_ID                                NUMBER
+ VENDOR_ID                                          NUMBER
+
+SQL> 
+SQL> CREATE TABLE Customer_Category (
+  2      Customer_Category_Id NUMBER PRIMARY KEY,
+  3      Customer_Category_Type VARCHAR2(20) UNIQUE NOT NULL,
+  4      Customer_Category_Discount NUMBER(10,2) UNIQUE NOT NULL
+  5  );
+
+Table created.
+
+SQL> 
+SQL> DESC Customer_Category;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMER_CATEGORY_ID                      NOT NULL NUMBER
+ CUSTOMER_CATEGORY_TYPE                    NOT NULL VARCHAR2(20)
+ CUSTOMER_CATEGORY_DISCOUNT                NOT NULL NUMBER(10,2)
+
+SQL> 
+SQL> CREATE TABLE Customer (
+  2      Customer_Id NUMBER PRIMARY KEY,
+  3      First_Name VARCHAR2(20) NOT NULL,
+  4      Last_Name VARCHAR2(20) NOT NULL,
+  5      Customer_Address VARCHAR2(50) NOT NULL,
+  6      Customer_Category_Id NUMBER,
+  7      Customer_Contact VARCHAR2(20) UNIQUE NOT NULL,
+  8      FOREIGN KEY (Customer_Category_Id) REFERENCES Customer_Category(Customer_Category_Id)
+  9  );
+
+Table created.
+
+SQL> 
+SQL> DESC Customer;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMER_ID                               NOT NULL NUMBER
+ FIRST_NAME                                NOT NULL VARCHAR2(20)
+ LAST_NAME                                 NOT NULL VARCHAR2(20)
+ CUSTOMER_ADDRESS                          NOT NULL VARCHAR2(50)
+ CUSTOMER_CATEGORY_ID                               NUMBER
+ CUSTOMER_CONTACT                          NOT NULL VARCHAR2(20)
+
+SQL> 
+SQL> CREATE TABLE Invoice (
+  2      Invoice_Id NUMBER PRIMARY KEY,
+  3      Discount_Amount NUMBER(10, 2) NOT NULL,
+  4      Grand_Total NUMBER(10, 2) NOT NULL,
+  5      Payment_Status VARCHAR2(20) NOT NULL,
+  6      Payment_Type VARCHAR2(20) NOT NULL
+  7  );
+
+Table created.
+
+SQL> 
+SQL> DESC Invoice;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INVOICE_ID                                NOT NULL NUMBER
+ DISCOUNT_AMOUNT                           NOT NULL NUMBER(10,2)
+ GRAND_TOTAL                               NOT NULL NUMBER(10,2)
+ PAYMENT_STATUS                            NOT NULL VARCHAR2(20)
+ PAYMENT_TYPE                              NOT NULL VARCHAR2(20)
+
+SQL> 
+SQL> CREATE TABLE Orders (
+  2      Order_Id NUMBER PRIMARY KEY,
+  3      Order_Date DATE NOT NULL,
+  4      Order_Total NUMBER(10, 2) NOT NULL,
+  5      Invoice_Id NUMBER,
+  6      Customer_Id NUMBER,
+  7      FOREIGN KEY (Invoice_Id) REFERENCES Invoice(Invoice_Id),
+  8      FOREIGN KEY (Customer_Id) REFERENCES Customer(Customer_Id)
+  9  );
+
+Table created.
+
+SQL> 
+SQL> DESC Orders;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ORDER_ID                                  NOT NULL NUMBER
+ ORDER_DATE                                NOT NULL DATE
+ ORDER_TOTAL                               NOT NULL NUMBER(10,2)
+ INVOICE_ID                                         NUMBER
+ CUSTOMER_ID                                        NUMBER
+
+SQL> 
+SQL> 
+SQL> CREATE TABLE Order_Product_Details (
+  2      Order_Id NUMBER,
+  3      Product_Id NUMBER,
+  4      Order_Quantity NUMBER NOT NULL,
+  5      Line_Total NUMBER(10, 2) NOT NULL,
+  6      PRIMARY KEY (Order_Id, Product_Id),
+  7      FOREIGN KEY (Order_Id) REFERENCES Orders(Order_Id),
+  8      FOREIGN KEY (Product_Id) REFERENCES Product(Product_Id)
+  9  );
+
+Table created.
+
+SQL> 
+SQL> DESC Order_Product_Details;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ORDER_ID                                  NOT NULL NUMBER
+ PRODUCT_ID                                NOT NULL NUMBER
+ ORDER_QUANTITY                            NOT NULL NUMBER
+ LINE_TOTAL                                NOT NULL NUMBER(10,2)
+
+SQL> INSERT INTO Vendor (Vendor_Id, Vendor_Name, Vendor_Contact, Vendor_Address)
+  2  VALUES (1, 'Power Surge', '+16105579114', 'Boston');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Vendor (Vendor_Id, Vendor_Name, Vendor_Contact, Vendor_Address)
+  2  VALUES (2, 'Electric Expertise', '+15853121545', 'Texas');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Vendor (Vendor_Id, Vendor_Name, Vendor_Contact, Vendor_Address)
+  2  VALUES (3, 'Modern Gadgets', '+18143519523', 'New York');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Vendor (Vendor_Id, Vendor_Name, Vendor_Contact, Vendor_Address)
+  2  VALUES (4, 'Micro Electronics', '+18143519416', 'Washington, D.C');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Vendor (Vendor_Id, Vendor_Name, Vendor_Contact, Vendor_Address)
+  2  VALUES (5, 'Cbl Digitals', '+14842918990', 'Las Vegas');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Vendor (Vendor_Id, Vendor_Name, Vendor_Contact, Vendor_Address)
+  2  VALUES (6, 'Gadget Gear', '+15852826897', 'Los Angeles');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Vendor (Vendor_Id, Vendor_Name, Vendor_Contact, Vendor_Address)
+  2  VALUES (7, 'The E-Zone', '+15852826962', 'Alaska');
+
+1 row created.
+
+
+SQL> SELECT * FROM Vendor;
+
+ VENDOR_ID VENDOR_NAME          VENDOR_CONTACT                                     VENDOR_ADDRESS                                                                                                                                                         
+---------- -------------------- -------------------------------------------------- --------------------------------------------------                                                                                                                     
+         1 Power Surge          +16105579114                                       Boston                                                                                                                                                                 
+         2 Electric Expertise   +15853121545                                       Texas                                                                                                                                                                  
+         3 Modern Gadgets       +18143519523                                       New York                                                                                                                                                               
+         4 Micro Electronics    +18143519416                                       Washington, D.C                                                                                                                                                        
+         5 Cbl Digitals         +14842918990                                       Las Vegas                                                                                                                                                              
+         6 Gadget Gear          +15852826897                                       Los Angeles                                                                                                                                                            
+         7 The E-Zone           +15852826962                                       Alaska                                                                                                                                                                 
+
+7 rows selected.
+
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (1, 'Monitors');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (2, 'SmartPhones');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (3, 'Laptop');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (4, 'Home Automation');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (5, 'Headphones');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (6, 'Gamings');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (7, 'Fitness Machines');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product_Category (Product_Category_Id, Product_Category_Name)
+  2  VALUES (8, 'Accessories');
+
+1 row created.
+
+SQL> SELECT * FROM Product_Category;
+
+PRODUCT_CATEGORY_ID PRODUCT_CATEGORY_NAM                                                                                                                                                                                                                  
+------------------- --------------------                                                                                                                                                                                                                  
+                  1 Monitors                                                                                                                                                                                                                              
+                  2 SmartPhones                                                                                                                                                                                                                           
+                  3 Laptop                                                                                                                                                                                                                                
+                  4 Home Automation                                                                                                                                                                                                                       
+                  5 Headphones                                                                                                                                                                                                                            
+                  6 Gamings                                                                                                                                                                                                                               
+                  7 Fitness Machines                                                                                                                                                                                                                      
+                  8 Accessories                                                                                                                                                                                                                           
+
+8 rows selected.
+
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (1, '27-inch LG Monitor', 55, 300.00, 1, 1);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (2, 'Samsung S21', 80, 500.00, 2, 2);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (3, 'Predator Laptop', 20, 1200.00, 3, 3);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (4, 'Smart Home Hub', 10, 200.00, 4, 4);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (5, 'Apple Headphones', 30, 100.00, 5, 5);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (6, 'Gaming Console', 25, 400.00, 6, 6);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (7, 'Elliptical Machine', 5, 800.00, 7, 7);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (8, 'Sony Headphones', 25, 120.00, 5, 5);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (9, 'Wireless Keyboard', 45, 80.00, 8, 1);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (10, 'Samsung Note 20', 70, 600.00, 2, 5);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Product (Product_Id, Product_Name, Stock_Quantity, Unit_Price, Product_Category_Id, Vendor_Id)
+  2  VALUES (11, 'Lighting System', 15, 120.00, 4, 5);
+
+1 row created.
+
+SQL> SELECT * FROM Product;
+
+PRODUCT_ID PRODUCT_NAME         STOCK_QUANTITY UNIT_PRICE PRODUCT_CATEGORY_ID  VENDOR_ID                                                                                                                                                                  
+---------- -------------------- -------------- ---------- ------------------- ----------                                                                                                                                                                  
+         1 27-inch LG Monitor               55        300                   1          1                                                                                                                                                                  
+         2 Samsung S21                      80        500                   2          2                                                                                                                                                                  
+         3 Predator Laptop                  20       1200                   3          3                                                                                                                                                                  
+         4 Smart Home Hub                   10        200                   4          4                                                                                                                                                                  
+         5 Apple Headphones                 30        100                   5          5                                                                                                                                                                  
+         6 Gaming Console                   25        400                   6          6                                                                                                                                                                  
+         7 Elliptical Machine                5        800                   7          7                                                                                                                                                                  
+         8 Sony Headphones                  25        120                   5          5                                                                                                                                                                  
+         9 Wireless Keyboard                45         80                   8          1                                                                                                                                                                  
+        10 Samsung Note 20                  70        600                   2          5                                                                                                                                                                  
+        11 Lighting System                  15        120                   4          5                                                                                                                                                                  
+
+11 rows selected.
+
+SQL> INSERT INTO Customer_Category (Customer_Category_Id, Customer_Category_Type, Customer_Category_Discount)
+  2  VALUES (1, 'R', 0.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer_Category (Customer_Category_Id, Customer_Category_Type, Customer_Category_Discount)
+  2  VALUES (2, 'S', 0.05);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer_Category (Customer_Category_Id, Customer_Category_Type, Customer_Category_Discount)
+  2  VALUES (3, 'V', 0.10);
+
+1 row created.
+
+SQL> SELECT * FROM Customer_Category;
+
+CUSTOMER_CATEGORY_ID CUSTOMER_CATEGORY_TY CUSTOMER_CATEGORY_DISCOUNT                                                                                                                                                                                      
+-------------------- -------------------- --------------------------                                                                                                                                                                                      
+                   1 R                                             0                                                                                                                                                                                      
+                   2 S                                           .05                                                                                                                                                                                      
+                   3 V                                            .1                                                                                                                                                                                      
+
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (1, 'Sam', 'Smith', '789 Kentucky', 2, '+15952826897');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (2, 'Joey', 'Tribianni', '298 Beachwalk', 1, '+11952826800');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (3, 'Monica', 'Gellar', '854 Avocado Ave', 3, '+109566826855');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (4, 'Chandler', 'Bing', '2F 4035-1 Ikenobecho Yokohama', 2, '+81952826700');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (5, 'Ross', 'Gellar', '3750 Wailea Drive', 1, '+71952664880');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (6, 'Rachel', 'Green', '456 Park Avenue', 3, '+99952826800');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (7, 'Phoebe', 'Buffay', '915 Heath Drive Montgomery', 3, '+931952826800');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Customer (Customer_Id, First_Name, Last_Name, Customer_Address, Customer_Category_Id, Customer_Contact)
+  2  VALUES (8, 'Richard', 'Brown', '5T Pine Wood', 3, '+987654321334') ;
+
+1 row created.
+
+SQL> 
+SQL> SELECT * FROM Customer;
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            CUSTOMER_ADDRESS                                   CUSTOMER_CATEGORY_ID CUSTOMER_CONTACT                                                                                                            
+----------- -------------------- -------------------- -------------------------------------------------- -------------------- --------------------                                                                                                        
+          1 Sam                  Smith                789 Kentucky                                                          2 +15952826897                                                                                                                
+          2 Joey                 Tribianni            298 Beachwalk                                                         1 +11952826800                                                                                                                
+          3 Monica               Gellar               854 Avocado Ave                                                       3 +109566826855                                                                                                               
+          4 Chandler             Bing                 2F 4035-1 Ikenobecho Yokohama                                         2 +81952826700                                                                                                                
+          5 Ross                 Gellar               3750 Wailea Drive                                                     1 +71952664880                                                                                                                
+          6 Rachel               Green                456 Park Avenue                                                       3 +99952826800                                                                                                                
+          7 Phoebe               Buffay               915 Heath Drive Montgomery                                            3 +931952826800                                                                                                               
+          8 Richard              Brown                5T Pine Wood                                                          3 +987654321334                                                                                                               
+
+8 rows selected.
+
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (1, 0.00, 2600.00, 'Paid', 'Credit Card');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (2, 0.00, 2500.00, 'Pending', 'Cash On Delivery');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (3, 15.00, 285.00, 'Paid', 'Debit Card');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (4, 0.00, 1400.00, 'Pending', 'E-Wallet');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (5, 40.00, 360.00, 'Paid', 'Credit Card');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (6, 60.00, 540.00, 'Pending', 'Cash On Delivery');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (7, 75.00, 1425.00, 'Paid', 'Debit Card');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (8, 240.00, 2160.00, 'Paid', 'E-Wallet');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (9, 188.00, 3572.00, 'Pending', 'Cash On Delivery');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Invoice (Invoice_Id, Discount_Amount, Grand_Total, Payment_Status, Payment_Type)
+  2  VALUES (10, 0.00, 500.00, 'Pending', 'Cash On Delivery');
+
+1 row created.
+
+SQL> SELECT * FROM Invoice;
+
+INVOICE_ID DISCOUNT_AMOUNT GRAND_TOTAL PAYMENT_STATUS       PAYMENT_TYPE                                                                                                                                                                                  
+---------- --------------- ----------- -------------------- --------------------                                                                                                                                                                          
+         1               0        2600 Paid                 Credit Card                                                                                                                                                                                   
+         2               0        2500 Pending              Cash On Delivery                                                                                                                                                                              
+         3              15         285 Paid                 Debit Card                                                                                                                                                                                    
+         4               0        1400 Pending              E-Wallet                                                                                                                                                                                      
+         5              40         360 Paid                 Credit Card                                                                                                                                                                                   
+         6              60         540 Pending              Cash On Delivery                                                                                                                                                                              
+         7              75        1425 Paid                 Debit Card                                                                                                                                                                                    
+         8             240        2160 Paid                 E-Wallet                                                                                                                                                                                      
+         9             188        3572 Pending              Cash On Delivery                                                                                                                                                                              
+        10               0         500 Pending              Cash On Delivery                                                                                                                                                                              
+
+10 rows selected.
+
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (1, TO_DATE('2023-05-05', 'YYYY-MM-DD'), 2600.00, 1, 5);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (2, TO_DATE('2023-08-10', 'YYYY-MM-DD'), 2500.00, 2, 2);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (3, TO_DATE('2023-05-15', 'YYYY-MM-DD'), 300.00, 3, 4);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (4, TO_DATE('2023-07-20', 'YYYY-MM-DD'), 1400.00, 4, 5);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (5, TO_DATE('2023-05-25', 'YYYY-MM-DD'), 400.00, 5, 7);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (6, TO_DATE('2023-05-28', 'YYYY-MM-DD'), 600.00, 6, 6);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (7, TO_DATE('2023-05-30', 'YYYY-MM-DD'), 1500.00, 7, 1);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (8, TO_DATE('2023-06-05', 'YYYY-MM-DD'), 2400.00, 8, 3);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (9, TO_DATE('2023-06-10', 'YYYY-MM-DD'), 3760.00, 9, 1);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Orders (Order_Id, Order_Date, Order_Total, Invoice_Id, Customer_Id)
+  2  VALUES (10, TO_DATE('2023-08-15', 'YYYY-MM-DD'), 500.00, 10, 2);
+
+1 row created.
+
+SQL> SELECT * FROM Orders;
+
+  ORDER_ID ORDER_DAT ORDER_TOTAL INVOICE_ID CUSTOMER_ID                                                                                                                                                                                                   
+---------- --------- ----------- ---------- -----------                                                                                                                                                                                                   
+         1 05-MAY-23        2600          1           5                                                                                                                                                                                                   
+         2 10-AUG-23        2500          2           2                                                                                                                                                                                                   
+         3 15-MAY-23         300          3           4                                                                                                                                                                                                   
+         4 20-JUL-23        1400          4           5                                                                                                                                                                                                   
+         5 25-MAY-23         400          5           7                                                                                                                                                                                                   
+         6 28-MAY-23         600          6           6                                                                                                                                                                                                   
+         7 30-MAY-23        1500          7           1                                                                                                                                                                                                   
+         8 05-JUN-23        2400          8           3                                                                                                                                                                                                   
+         9 10-JUN-23        3760          9           1                                                                                                                                                                                                   
+        10 15-AUG-23         500         10           2                                                                                                                                                                                                   
+
+10 rows selected.
+
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (1, 3, 2, 2400.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (2, 2, 5, 2500.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (3, 5, 3, 300.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (4, 4, 1, 200.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (5, 5, 4, 400.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (6, 1, 2, 600.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (7, 2, 3, 1500.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (8, 3, 2, 2400.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (9, 3, 3, 3600.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (10, 2, 1, 500.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (1, 5, 2, 200.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (4, 1, 4, 1200.00);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO Order_Product_Details (Order_Id, Product_Id, Order_Quantity, Line_Total)
+  2  VALUES (9, 9, 2, 160.00);
+
+1 row created.
+
+SQL> SELECT * FROM Order_Product_Details;
+
+  ORDER_ID PRODUCT_ID ORDER_QUANTITY LINE_TOTAL                                                                                                                                                                                                           
+---------- ---------- -------------- ----------                                                                                                                                                                                                           
+         1          3              2       2400                                                                                                                                                                                                           
+         2          2              5       2500                                                                                                                                                                                                           
+         3          5              3        300                                                                                                                                                                                                           
+         4          4              1        200                                                                                                                                                                                                           
+         5          5              4        400                                                                                                                                                                                                           
+         6          1              2        600                                                                                                                                                                                                           
+         7          2              3       1500                                                                                                                                                                                                           
+         8          3              2       2400                                                                                                                                                                                                           
+         9          3              3       3600                                                                                                                                                                                                           
+        10          2              1        500                                                                                                                                                                                                           
+         1          5              2        200                                                                                                                                                                                                           
+
+  ORDER_ID PRODUCT_ID ORDER_QUANTITY LINE_TOTAL                                                                                                                                                                                                           
+---------- ---------- -------------- ----------                                                                                                                                                                                                           
+         4          1              4       1200                                                                                                                                                                                                           
+         9          9              2        160                                                                                                                                                                                                           
+
+13 rows selected.
+
+SQL> SET PAGESIZE 150
+SQL> SELECT * FROM Order_Product_Details;
+
+  ORDER_ID PRODUCT_ID ORDER_QUANTITY LINE_TOTAL                                                                                                                                                                                                           
+---------- ---------- -------------- ----------                                                                                                                                                                                                           
+         1          3              2       2400                                                                                                                                                                                                           
+         2          2              5       2500                                                                                                                                                                                                           
+         3          5              3        300                                                                                                                                                                                                           
+         4          4              1        200                                                                                                                                                                                                           
+         5          5              4        400                                                                                                                                                                                                           
+         6          1              2        600                                                                                                                                                                                                           
+         7          2              3       1500                                                                                                                                                                                                           
+         8          3              2       2400                                                                                                                                                                                                           
+         9          3              3       3600                                                                                                                                                                                                           
+        10          2              1        500                                                                                                                                                                                                           
+         1          5              2        200                                                                                                                                                                                                           
+         4          1              4       1200                                                                                                                                                                                                           
+         9          9              2        160                                                                                                                                                                                                           
+
+13 rows selected.
+
+SQL> SELECT Customer.Customer_Id, Customer.First_Name, Customer.Last_Name, Customer.Customer_Address, Customer.Customer_Contact
+  2  FROM Customer
+  3  JOIN Customer_Category ON Customer.Customer_Category_Id = Customer_Category.Customer_Category_Id
+  4  WHERE Customer_Category.Customer_Category_Type = 'S';
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            CUSTOMER_ADDRESS                                   CUSTOMER_CONTACT                                                                                                                                 
+----------- -------------------- -------------------- -------------------------------------------------- --------------------                                                                                                                             
+          1 Sam                  Smith                789 Kentucky                                       +15952826897                                                                                                                                     
+          4 Chandler             Bing                 2F 4035-1 Ikenobecho Yokohama                      +81952826700                                                                                                                                     
+
+SQL> SELECT
+  2      O.Order_Id,
+  3      O.Order_Date,
+  4      OPD.Product_Id,
+  5      P.Product_Name,
+  6      OPD.Order_Quantity,
+  7      OPD.Line_Total
+  8  FROM
+  9      Orders O
+ 10  JOIN
+ 11      Order_Product_Details OPD ON O.Order_Id = OPD.Order_Id
+ 12  JOIN
+ 13      Product P ON OPD.Product_Id = P.Product_Id
+ 14  WHERE
+ 15      O.Order_Date BETWEEN TO_DATE('2023-05-01', 'YYYY-MM-DD') AND TO_DATE('2023-05-28', 'YYYY-MM-DD')
+ 16  ORDER BY
+ 17      O.Order_Id, OPD.Product_Id;
+
+  ORDER_ID ORDER_DAT PRODUCT_ID PRODUCT_NAME         ORDER_QUANTITY LINE_TOTAL                                                                                                                                                                            
+---------- --------- ---------- -------------------- -------------- ----------                                                                                                                                                                            
+         1 05-MAY-23          3 Predator Laptop                   2       2400                                                                                                                                                                            
+         1 05-MAY-23          5 Apple Headphones                  2        200                                                                                                                                                                            
+         3 15-MAY-23          5 Apple Headphones                  3        300                                                                                                                                                                            
+         5 25-MAY-23          5 Apple Headphones                  4        400                                                                                                                                                                            
+         6 28-MAY-23          1 27-inch LG Monitor                2        600                                                                                                                                                                            
+
+SQL> SELECT
+  2      C.Customer_Id,
+  3      C.First_Name,
+  4      C.Last_Name,
+  5      C.Customer_Address,
+  6      C.Customer_Category_Id,
+  7      C.Customer_Contact,
+  8      O.Order_Id,
+  9      O.Order_Date,
+ 10      O.Order_Total
+ 11  FROM
+ 12      Customer C
+ 13  LEFT JOIN
+ 14      Orders O ON C.Customer_Id = O.Customer_Id
+ 15  ORDER BY
+ 16      C.Customer_Id, O.Order_Id;
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            CUSTOMER_ADDRESS                                   CUSTOMER_CATEGORY_ID CUSTOMER_CONTACT       ORDER_ID ORDER_DAT ORDER_TOTAL                                                                       
+----------- -------------------- -------------------- -------------------------------------------------- -------------------- -------------------- ---------- --------- -----------                                                                       
+          1 Sam                  Smith                789 Kentucky                                                          2 +15952826897                  7 30-MAY-23        1500                                                                       
+          1 Sam                  Smith                789 Kentucky                                                          2 +15952826897                  9 10-JUN-23        3760                                                                       
+          2 Joey                 Tribianni            298 Beachwalk                                                         1 +11952826800                  2 10-AUG-23        2500                                                                       
+          2 Joey                 Tribianni            298 Beachwalk                                                         1 +11952826800                 10 15-AUG-23         500                                                                       
+          3 Monica               Gellar               854 Avocado Ave                                                       3 +109566826855                 8 05-JUN-23        2400                                                                       
+          4 Chandler             Bing                 2F 4035-1 Ikenobecho Yokohama                                         2 +81952826700                  3 15-MAY-23         300                                                                       
+          5 Ross                 Gellar               3750 Wailea Drive                                                     1 +71952664880                  1 05-MAY-23        2600                                                                       
+          5 Ross                 Gellar               3750 Wailea Drive                                                     1 +71952664880                  4 20-JUL-23        1400                                                                       
+          6 Rachel               Green                456 Park Avenue                                                       3 +99952826800                  6 28-MAY-23         600                                                                       
+          7 Phoebe               Buffay               915 Heath Drive Montgomery                                            3 +931952826800                 5 25-MAY-23         400                                                                       
+          8 Richard              Brown                5T Pine Wood                                                          3 +987654321334                                                                                                               
+
+11 rows selected.
+
+SQL> SELECT *
+  2      FROM Product
+  3      WHERE SUBSTR(Product_Name, 2, 1) = 'a' AND Stock_Quantity > 50;
+
+PRODUCT_ID PRODUCT_NAME         STOCK_QUANTITY UNIT_PRICE PRODUCT_CATEGORY_ID  VENDOR_ID                                                                                                                                                                  
+---------- -------------------- -------------- ---------- ------------------- ----------                                                                                                                                                                  
+         2 Samsung S21                      80        500                   2          2                                                                                                                                                                  
+        10 Samsung Note 20                  70        600                   2          5                                                                                                                                                                  
+
+SQL> SELECT *
+  2  FROM (
+  3      SELECT
+  4          C.Customer_Id,
+  5          C.First_Name,
+  6          C.Last_Name,
+  7          MAX(O.Order_Date) AS LastOrderDate
+  8      FROM
+  9          Customer C
+ 10      JOIN
+ 11          Orders O ON C.Customer_Id = O.Customer_Id
+ 12      GROUP BY
+ 13          C.Customer_Id, C.First_Name, C.Last_Name
+ 14      ORDER BY
+ 15          LastOrderDate DESC
+ 16  )
+ 17  WHERE ROWNUM = 1;
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            LASTORDER                                                                                                                                                                                           
+----------- -------------------- -------------------- ---------                                                                                                                                                                                           
+          2 Joey                 Tribianni            15-AUG-23                                                                                                                                                                                           
+
+SQL> SELECT TO_CHAR(Order_Date, 'YYYY-MM') AS Month,
+  2         SUM(Order_Total) AS TotalRevenue
+  3  FROM Orders
+  4  GROUP BY TO_CHAR(Order_Date, 'YYYY-MM')
+  5  ORDER BY Month;
+
+MONTH   TOTALREVENUE                                                                                                                                                                                                                                      
+------- ------------                                                                                                                                                                                                                                      
+2023-05         5400                                                                                                                                                                                                                                      
+2023-06         6160                                                                                                                                                                                                                                      
+2023-07         1400                                                                                                                                                                                                                                      
+2023-08         3000                                                                                                                                                                                                                                      
+
+SQL> SELECT *
+  2  FROM Orders
+  3  WHERE Order_Total >= (
+  4      SELECT AVG(Order_Total)
+  5      FROM Orders
+  6  );
+
+  ORDER_ID ORDER_DAT ORDER_TOTAL INVOICE_ID CUSTOMER_ID                                                                                                                                                                                                   
+---------- --------- ----------- ---------- -----------                                                                                                                                                                                                   
+         1 05-MAY-23        2600          1           5                                                                                                                                                                                                   
+         2 10-AUG-23        2500          2           2                                                                                                                                                                                                   
+         8 05-JUN-23        2400          8           3                                                                                                                                                                                                   
+         9 10-JUN-23        3760          9           1                                                                                                                                                                                                   
+
+SQL> SELECT AVG(Order_Total) AS AverageOrderTotal
+  2  FROM Orders;
+
+AVERAGEORDERTOTAL                                                                                                                                                                                                                                         
+-----------------                                                                                                                                                                                                                                         
+             1596                                                                                                                                                                                                                                         
+
+SQL> SELECT Vendor.Vendor_Id, Vendor.Vendor_Name, COUNT(Product.Product_Id) AS ProductsSupplied
+  2  FROM Vendor
+  3  JOIN Product ON Vendor.Vendor_Id = Product.Vendor_Id
+  4  GROUP BY Vendor.Vendor_Id, Vendor.Vendor_Name
+  5  HAVING COUNT(Product.Product_Id) > 3;
+
+ VENDOR_ID VENDOR_NAME          PRODUCTSSUPPLIED                                                                                                                                                                                                          
+---------- -------------------- ----------------                                                                                                                                                                                                          
+         5 Cbl Digitals                        4                                                                                                                                                                                                          
+
+SQL> SELECT * FROM (
+  2      SELECT Product.Product_Id, Product.Product_Name, COUNT(Order_Product_Details.Order_Id) AS OrderCount
+  3      FROM Product
+  4      JOIN Order_Product_Details ON Product.Product_Id = Order_Product_Details.Product_Id
+  5      GROUP BY Product.Product_Id, Product.Product_Name
+  6      ORDER BY OrderCount DESC
+  7  )
+  8  WHERE ROWNUM <= 3;
+
+PRODUCT_ID PRODUCT_NAME         ORDERCOUNT                                                                                                                                                                                                                
+---------- -------------------- ----------                                                                                                                                                                                                                
+         3 Predator Laptop               3                                                                                                                                                                                                                
+         2 Samsung S21                   3                                                                                                                                                                                                                
+         5 Apple Headphones              3                                                                                                                                                                                                                
+
+SQL> SELECT
+  2      Customer_Id,
+  3      First_Name,
+  4      Last_Name,
+  5      TotalSpending
+  6  FROM (
+  7      SELECT
+  8          C.Customer_Id,
+  9          C.First_Name,
+ 10          C.Last_Name,
+ 11          SUM(O.Order_Total) AS TotalSpending,
+ 12          ROW_NUMBER() OVER (ORDER BY SUM(O.Order_Total) DESC) AS Row_Num
+ 13      FROM
+ 14          Customer C
+ 15      JOIN
+ 16          Orders O ON C.Customer_Id = O.Customer_Id
+ 17      WHERE
+ 18          EXTRACT(MONTH FROM O.Order_Date) = 8
+ 19      GROUP BY
+ 20          C.Customer_Id, C.First_Name, C.Last_Name
+ 21  )
+ 22  WHERE
+ 23      Row_Num = 1;
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            TOTALSPENDING                                                                                                                                                                                       
+----------- -------------------- -------------------- -------------                                                                                                                                                                                       
+          2 Joey                 Tribianni                     3000                                                                                                                                                                                       
+
+SQL> 
+SQL> SPOOL OFF

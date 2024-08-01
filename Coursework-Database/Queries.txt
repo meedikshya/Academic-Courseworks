@@ -1,0 +1,189 @@
+SQL> SELECT Customer.Customer_Id, Customer.First_Name, Customer.Last_Name, Customer.Customer_Address, Customer.Customer_Contact
+  2  FROM Customer
+  3  JOIN Customer_Category ON Customer.Customer_Category_Id = Customer_Category.Customer_Category_Id
+  4  WHERE Customer_Category.Customer_Category_Type = 'S';
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            CUSTOMER_ADDRESS                                   CUSTOMER_CONTACT                                                                                                                                 
+----------- -------------------- -------------------- -------------------------------------------------- --------------------                                                                                                                             
+          1 Sam                  Smith                789 Kentucky                                       +15952826897                                                                                                                                     
+          4 Chandler             Bing                 2F 4035-1 Ikenobecho Yokohama                      +81952826700                                                                                                                                     
+
+SQL> SELECT
+  2      O.Order_Id,
+  3      O.Order_Date,
+  4      OPD.Product_Id,
+  5      P.Product_Name,
+  6      OPD.Order_Quantity,
+  7      OPD.Line_Total
+  8  FROM
+  9      Orders O
+ 10  JOIN
+ 11      Order_Product_Details OPD ON O.Order_Id = OPD.Order_Id
+ 12  JOIN
+ 13      Product P ON OPD.Product_Id = P.Product_Id
+ 14  WHERE
+ 15      O.Order_Date BETWEEN TO_DATE('2023-05-01', 'YYYY-MM-DD') AND TO_DATE('2023-05-28', 'YYYY-MM-DD')
+ 16  ORDER BY
+ 17      O.Order_Id, OPD.Product_Id;
+
+  ORDER_ID ORDER_DAT PRODUCT_ID PRODUCT_NAME         ORDER_QUANTITY LINE_TOTAL                                                                                                                                                                            
+---------- --------- ---------- -------------------- -------------- ----------                                                                                                                                                                            
+         1 05-MAY-23          3 Predator Laptop                   2       2400                                                                                                                                                                            
+         1 05-MAY-23          5 Apple Headphones                  2        200                                                                                                                                                                            
+         3 15-MAY-23          5 Apple Headphones                  3        300                                                                                                                                                                            
+         5 25-MAY-23          5 Apple Headphones                  4        400                                                                                                                                                                            
+         6 28-MAY-23          1 27-inch LG Monitor                2        600                                                                                                                                                                            
+
+SQL> SELECT
+  2      C.Customer_Id,
+  3      C.First_Name,
+  4      C.Last_Name,
+  5      C.Customer_Address,
+  6      C.Customer_Category_Id,
+  7      C.Customer_Contact,
+  8      O.Order_Id,
+  9      O.Order_Date,
+ 10      O.Order_Total
+ 11  FROM
+ 12      Customer C
+ 13  LEFT JOIN
+ 14      Orders O ON C.Customer_Id = O.Customer_Id
+ 15  ORDER BY
+ 16      C.Customer_Id, O.Order_Id;
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            CUSTOMER_ADDRESS                                   CUSTOMER_CATEGORY_ID CUSTOMER_CONTACT       ORDER_ID ORDER_DAT ORDER_TOTAL                                                                       
+----------- -------------------- -------------------- -------------------------------------------------- -------------------- -------------------- ---------- --------- -----------                                                                       
+          1 Sam                  Smith                789 Kentucky                                                          2 +15952826897                  7 30-MAY-23        1500                                                                       
+          1 Sam                  Smith                789 Kentucky                                                          2 +15952826897                  9 10-JUN-23        3760                                                                       
+          2 Joey                 Tribianni            298 Beachwalk                                                         1 +11952826800                  2 10-AUG-23        2500                                                                       
+          2 Joey                 Tribianni            298 Beachwalk                                                         1 +11952826800                 10 15-AUG-23         500                                                                       
+          3 Monica               Gellar               854 Avocado Ave                                                       3 +109566826855                 8 05-JUN-23        2400                                                                       
+          4 Chandler             Bing                 2F 4035-1 Ikenobecho Yokohama                                         2 +81952826700                  3 15-MAY-23         300                                                                       
+          5 Ross                 Gellar               3750 Wailea Drive                                                     1 +71952664880                  1 05-MAY-23        2600                                                                       
+          5 Ross                 Gellar               3750 Wailea Drive                                                     1 +71952664880                  4 20-JUL-23        1400                                                                       
+          6 Rachel               Green                456 Park Avenue                                                       3 +99952826800                  6 28-MAY-23         600                                                                       
+          7 Phoebe               Buffay               915 Heath Drive Montgomery                                            3 +931952826800                 5 25-MAY-23         400                                                                       
+          8 Richard              Brown                5T Pine Wood                                                          3 +987654321334                                                                                                               
+
+11 rows selected.
+
+SQL> SELECT *
+  2      FROM Product
+  3      WHERE SUBSTR(Product_Name, 2, 1) = 'a' AND Stock_Quantity > 50;
+
+PRODUCT_ID PRODUCT_NAME         STOCK_QUANTITY UNIT_PRICE PRODUCT_CATEGORY_ID  VENDOR_ID                                                                                                                                                                  
+---------- -------------------- -------------- ---------- ------------------- ----------                                                                                                                                                                  
+         2 Samsung S21                      80        500                   2          2                                                                                                                                                                  
+        10 Samsung Note 20                  70        600                   2          5                                                                                                                                                                  
+
+SQL> SELECT *
+  2  FROM (
+  3      SELECT
+  4          C.Customer_Id,
+  5          C.First_Name,
+  6          C.Last_Name,
+  7          MAX(O.Order_Date) AS LastOrderDate
+  8      FROM
+  9          Customer C
+ 10      JOIN
+ 11          Orders O ON C.Customer_Id = O.Customer_Id
+ 12      GROUP BY
+ 13          C.Customer_Id, C.First_Name, C.Last_Name
+ 14      ORDER BY
+ 15          LastOrderDate DESC
+ 16  )
+ 17  WHERE ROWNUM = 1;
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            LASTORDER                                                                                                                                                                                           
+----------- -------------------- -------------------- ---------                                                                                                                                                                                           
+          2 Joey                 Tribianni            15-AUG-23                                                                                                                                                                                           
+
+SQL> SELECT TO_CHAR(Order_Date, 'YYYY-MM') AS Month,
+  2         SUM(Order_Total) AS TotalRevenue
+  3  FROM Orders
+  4  GROUP BY TO_CHAR(Order_Date, 'YYYY-MM')
+  5  ORDER BY Month;
+
+MONTH   TOTALREVENUE                                                                                                                                                                                                                                      
+------- ------------                                                                                                                                                                                                                                      
+2023-05         5400                                                                                                                                                                                                                                      
+2023-06         6160                                                                                                                                                                                                                                      
+2023-07         1400                                                                                                                                                                                                                                      
+2023-08         3000                                                                                                                                                                                                                                      
+
+SQL> SELECT *
+  2  FROM Orders
+  3  WHERE Order_Total >= (
+  4      SELECT AVG(Order_Total)
+  5      FROM Orders
+  6  );
+
+  ORDER_ID ORDER_DAT ORDER_TOTAL INVOICE_ID CUSTOMER_ID                                                                                                                                                                                                   
+---------- --------- ----------- ---------- -----------                                                                                                                                                                                                   
+         1 05-MAY-23        2600          1           5                                                                                                                                                                                                   
+         2 10-AUG-23        2500          2           2                                                                                                                                                                                                   
+         8 05-JUN-23        2400          8           3                                                                                                                                                                                                   
+         9 10-JUN-23        3760          9           1                                                                                                                                                                                                   
+
+SQL> SELECT AVG(Order_Total) AS AverageOrderTotal
+  2  FROM Orders;
+
+AVERAGEORDERTOTAL                                                                                                                                                                                                                                         
+-----------------                                                                                                                                                                                                                                         
+             1596                                                                                                                                                                                                                                         
+
+SQL> SELECT Vendor.Vendor_Id, Vendor.Vendor_Name, COUNT(Product.Product_Id) AS ProductsSupplied
+  2  FROM Vendor
+  3  JOIN Product ON Vendor.Vendor_Id = Product.Vendor_Id
+  4  GROUP BY Vendor.Vendor_Id, Vendor.Vendor_Name
+  5  HAVING COUNT(Product.Product_Id) > 3;
+
+ VENDOR_ID VENDOR_NAME          PRODUCTSSUPPLIED                                                                                                                                                                                                          
+---------- -------------------- ----------------                                                                                                                                                                                                          
+         5 Cbl Digitals                        4                                                                                                                                                                                                          
+
+SQL> SELECT * FROM (
+  2      SELECT Product.Product_Id, Product.Product_Name, COUNT(Order_Product_Details.Order_Id) AS OrderCount
+  3      FROM Product
+  4      JOIN Order_Product_Details ON Product.Product_Id = Order_Product_Details.Product_Id
+  5      GROUP BY Product.Product_Id, Product.Product_Name
+  6      ORDER BY OrderCount DESC
+  7  )
+  8  WHERE ROWNUM <= 3;
+
+PRODUCT_ID PRODUCT_NAME         ORDERCOUNT                                                                                                                                                                                                                
+---------- -------------------- ----------                                                                                                                                                                                                                
+         3 Predator Laptop               3                                                                                                                                                                                                                
+         2 Samsung S21                   3                                                                                                                                                                                                                
+         5 Apple Headphones              3                                                                                                                                                                                                                
+
+SQL> SELECT
+  2      Customer_Id,
+  3      First_Name,
+  4      Last_Name,
+  5      TotalSpending
+  6  FROM (
+  7      SELECT
+  8          C.Customer_Id,
+  9          C.First_Name,
+ 10          C.Last_Name,
+ 11          SUM(O.Order_Total) AS TotalSpending,
+ 12          ROW_NUMBER() OVER (ORDER BY SUM(O.Order_Total) DESC) AS Row_Num
+ 13      FROM
+ 14          Customer C
+ 15      JOIN
+ 16          Orders O ON C.Customer_Id = O.Customer_Id
+ 17      WHERE
+ 18          EXTRACT(MONTH FROM O.Order_Date) = 8
+ 19      GROUP BY
+ 20          C.Customer_Id, C.First_Name, C.Last_Name
+ 21  )
+ 22  WHERE
+ 23      Row_Num = 1;
+
+CUSTOMER_ID FIRST_NAME           LAST_NAME            TOTALSPENDING                                                                                                                                                                                       
+----------- -------------------- -------------------- -------------                                                                                                                                                                                       
+          2 Joey                 Tribianni                     3000                                                                                                                                                                                       
+
+SQL> 
+SQL> SPOOL OFF

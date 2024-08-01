@@ -1,0 +1,370 @@
+/*For the entire webpage*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 1320px;
+	margin: 0 auto;
+	padding: 0 19.2px;
+}
+
+header {
+	min-height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZyUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80)
+}
+
+/*styling navigation bar*/
+
+nav {
+	width: 100.9%;
+	margin: -10px;
+	background-color: #7e926f;
+	padding: 18px;
+	position: fixed;
+	z-index: 1;
+}
+
+/*Un-ordered list in navbar*/
+nav ul {
+	list-style: none;
+	text-align: center;
+}
+
+/*List-items inside navbar and un-ordered list */
+nav ul li {
+	display: inline-block;
+}
+
+/*links on navbar*/
+nav ul li a {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: whitesmoke;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 0 10px;
+}
+
+nav.navbar ul li a {
+	position: relative;
+}
+
+/*after is a pseudo class element*/
+nav.navbar ul li a::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 0%;
+}
+
+/*navbar on mouse hover*/
+nav.navbar ul li a:hover {
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 1px solid black;
+	background-color: #FCF9F3;
+	color: #7e926f;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+/*logo on navbar*/
+.logo {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: whitesmoke;
+	margin: 0 10px;
+	position: absolute;
+	margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+	display: inline-block;
+	padding: 10px;
+	position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+	display: block;
+	margin-left: 1350px;
+	margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+	display: block;
+	margin-left: 1410px;
+	margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+	height: 30px;
+}
+
+
+/*logo on navbar*/
+.logo {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: whitesmoke;
+	margin: 0 10px;
+	position: absolute;
+	margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+	display: inline-block;
+	padding: 10px;
+	position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+	display: block;
+	margin-left: 1350px;
+	margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+	display: block;
+	margin-left: 1410px;
+	margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+	height: 30px;
+}
+
+/*Styling the cover of the blog page*/
+.banner {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: rgb(255, 255, 255);
+}
+
+/*Styling the title of the cover*/
+.banner-title {
+	margin-top: -500px;
+	font-size: 80px;
+	line-height: 1.2;
+}
+
+.banner-title span {
+	color: #fff;
+}
+
+/*Styling the text of the cover*/
+.banner p {
+	padding: 16px 0 32px 0;
+	font-size: 22.4px;
+	text-transform: capitalize;
+	font-weight: 300;
+	word-spacing: 2px;
+}
+
+/*Title of the blog*/
+.title {
+	text-align: center;
+	padding: 16px 0;
+}
+
+.title h2 {
+	font-size: 38.4px;
+}
+
+.title p {
+	text-transform: uppercase;
+	padding: 512px 0;
+}
+
+/* blog */
+.blog {
+	background: #f9f9f9;
+	padding: 72px 0;
+}
+
+/*Overall content of the blog*/
+.blog-content {
+	margin: 32px 0;
+}
+
+/*Each separate item of the blog*/
+.blog-item {
+	display: flex;
+	align-items: flex-start;
+	bottom: 100px;
+}
+
+/*Styling the images of the blog*/
+.blog-img {
+	position: relative;
+	left: 10px;
+	top: 20px;
+}
+
+/*Texts of the bloh*/
+.blog-text {
+	margin: 35.2px 0;
+	padding: 0 16px;
+}
+
+/*The span used for implementing java*/
+.blog-text span {
+	font-weight: 300;
+	display: block;
+	padding-bottom: 8px;
+}
+
+.blog-text h2 {
+	padding: 16px 0;
+	font-size: 26.4px;
+	font-weight: 500;
+}
+
+.blog-text p {
+	font-weight: 300;
+	font-size: 17.6px;
+	opacity: 0.9;
+	padding-bottom: 19.2px;
+}
+
+/*Styling the five of the functions used for java*/
+#myBtn {
+	font-size: 16px;
+	background-color: #01796f;
+	color: #fff;
+	padding: 10px 15px;
+	margin: 20px;
+	border: 2px solid;
+	cursor: pointer;
+}
+
+#myBtnII {
+	font-size: 16px;
+	background-color: #01796f;
+	color: #fff;
+	padding: 10px 15px;
+	margin: 20px;
+	border: 2px solid;
+	cursor: pointer;
+}
+
+#myBtnIII {
+	font-size: 16px;
+	background-color: #01796f;
+	color: #fff;
+	padding: 10px 15px;
+	margin: 20px;
+	border: 2px solid;
+	cursor: pointer;
+}
+
+#myBtnIV {
+	font-size: 16px;
+	background-color: #01796f;
+	color: #fff;
+	padding: 10px 15px;
+	margin: 20px;
+	border: 2px solid;
+	cursor: pointer;
+}
+
+#myBtnV {
+	font-size: 16px;
+	background-color: #01796f;
+	color: #fff;
+	padding: 10px 15px;
+	margin: 20px;
+	border: 2px solid;
+	cursor: pointer;
+}
+
+
+
+
+/*footer*/
+
+.containerFooter {
+	max-width: 1170px;
+	margin: auto;
+	padding-top: 30px;
+	height: 300px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul {
+	list-style: none;
+}
+
+.footer {
+	background-color: #969581;
+	padding: 20px 0;
+
+}
+
+.footerClass {
+	width: 25%;
+	padding: 5 15px;
+	margin-left: 80px;
+}
+
+.footerClass h4 {
+	font-size: 18px;
+	color: #ffffff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footerClass ul li a {
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: 300;
+	color: #f3f3f3;
+	display: block;
+	transition: all 0.3s ease;
+	padding-bottom: 5px;
+}
+
+.footerClass ul li a:hover {
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footerClass .socialLinks li {
+	display: flex;
+	cursor: pointer;
+}
+
+.copyright {
+	display: flex;
+	justify-content: center;
+	margin-left: 320px;
+	padding: 20px;
+	color: #454235;
+	margin-top: 50px;
+}

@@ -1,0 +1,876 @@
+/*css property for whole page*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*css property forbody tag*/
+body {
+    background-color: #FCF9F3;
+}
+
+/*styling navigation bar*/
+
+nav {
+    width: 100.9%;
+    margin: -10px;
+    background-color: #7e926f;
+    padding: 18px;
+    position: fixed;
+    z-index: 1;
+}
+
+/*Un-ordered list in navbar*/
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+/*List-items inside navbar and un-ordered list */
+nav ul li {
+    display: inline-block;
+}
+
+/*links on navbar*/
+nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+nav.navbar ul li a {
+    position: relative;
+}
+
+/*after is a pseudo class element*/
+nav.navbar ul li a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+}
+
+/*navbar on mouse hover*/
+nav.navbar ul li a:hover {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1px solid black;
+    background-color: #FCF9F3;
+    color: #7e926f;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+/*logo on navbar*/
+.logo {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 0 10px;
+    position: absolute;
+    margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+    display: block;
+    margin-left: 1350px;
+    margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+    display: block;
+    margin-left: 1410px;
+    margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+    height: 30px;
+}
+
+
+/*logo on navbar*/
+.logo {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 0 10px;
+    position: absolute;
+    margin-top: 0;
+}
+
+/*icons on navbar*/
+.icons {
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+}
+
+/*icon first i.e cart icon*/
+.iconFirst {
+    display: block;
+    margin-left: 1350px;
+    margin-top: -44px;
+}
+
+/*icon second i.e search icon*/
+.iconSecond {
+    display: block;
+    margin-left: 1410px;
+    margin-top: -44px;
+
+}
+
+/*on hover ; icons*/
+.iconFirst:hover,
+.iconSecond:hover {
+    height: 30px;
+}
+
+
+/*body*/
+body {
+    width: 100%;
+}
+
+/*main image of product page*/
+.mainImage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 130px;
+    margin-left: 100px;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+
+/*text on the main image*/
+.main .text {
+    position: absolute;
+    top: 40%;
+    left: 65%;
+}
+
+/*styling text on the main image*/
+.text h1,
+h2 {
+    color: #183104;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 50px;
+
+}
+
+/*Shop Now Button*/
+.main .shopNowFirst {
+    position: absolute;
+    top: 58%;
+    left: 65%;
+    width: 133px;
+    height: 48px;
+}
+
+/*shop now button on main image*/
+.shopNowFirst {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 11.2px 22.4px 11.2px 17.6px;
+    color: white;
+    background: linear-gradient(0deg, #697560 0%, #8b9980 100%);
+    border: none;
+    box-shadow: 0 11.2px 24px -8px #7e926f;
+    letter-spacing: 0.9px;
+    border-radius: 320px;
+    cursor: pointer;
+}
+
+/*shop now button on hover*/
+.shopNowFirst:hover {
+    box-shadow: 0 8px 24px -8px #3c4634;
+
+}
+
+
+/*it's a section of bonsai pictures with it's symbolization*/
+
+.symbolization {
+    display: flex;
+    margin-left: 13px;
+
+}
+
+/*div for the contents i.e heading and para*/
+.meanings {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    height: 313px;
+    visibility: hidden;
+    transform: translateY(10%);
+    transition: transform 0.4s, opacity 0.5s;
+}
+
+/*heading tag*/
+.meaningfulBonsai {
+    margin-top: -180px;
+    justify-content: center;
+    display: flex;
+    background-color: #7e926f;
+    color: white;
+    opacity: 0.8;
+    width: 350px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+/*para tag*/
+.bonsaiMeaning {
+    text-align: justify;
+    background-color: #7e926f;
+    color: white;
+    opacity: 0.8;
+    width: 350px;
+    margin-left: 20px;
+    height: 130px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+/*on hover over picture*/
+.bonsaiPictureFirst:hover .meanings,
+.bonsaiPictureSecond:hover .meanings,
+.bonsaiPictureThird:hover .meanings,
+.bonsaiPictureFourth:hover .meanings {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+
+/*display section i.e it contains new arrivals div and sale div with some pictures*/
+.maindiv {
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    margin-top: -50px;
+}
+
+/*left div*/
+.divFirst {
+    height: 1080px;
+    width: 60%;
+    margin-left: 110px;
+    margin-right: 20px;
+}
+
+/*First div of left side*/
+.subdivFirst {
+    height: 500px;
+    margin-bottom: 10px;
+}
+
+/*second div of right side*/
+.subdivSecond {
+    height: 500px;
+    margin-top: 10px;
+}
+
+/*right div*/
+.divSecond {
+    height: 1080px;
+    width: 50%;
+}
+
+/*First div of right side*/
+.subdivThird {
+    height: 320px;
+    margin-bottom: 20px;
+}
+
+/*second div of right side*/
+.subdivFourth {
+    height: 320px;
+    margin-bottom: 20px;
+}
+
+/*third div of right side*/
+.subdivFifth {
+    height: 320px;
+    margin-bottom: 20px;
+}
+
+/*shop now button over new arrivals*/
+.shopNowSecond {
+    position: absolute;
+    top: 215%;
+    left: 46.5%;
+    width: 112px;
+    height: 48px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 11.2px 22.4px 11.2px 17.6px;
+    color: #183104;
+    background-color: white;
+    border: none;
+    box-shadow: 0 11.2px 24px -8px #908e88;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+.shopNowSecond:hover {
+    box-shadow: 0 11.2px 24px -8px #635f4f;
+}
+
+/*heading text over Green Picture*/
+.saleText {
+    color: #183104;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 50px;
+    position: absolute;
+    background-color: white;
+    border-radius: 80px;
+    padding: 10px;
+    top: 250%;
+    left: 15%;
+}
+
+/*paragraph over green picture*/
+.saleParagraph {
+    color: white;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 40px;
+    position: absolute;
+    top: 263%;
+    left: 15%;
+}
+
+/*grab button over green picture*/
+.grabButton {
+    position: absolute;
+    top: 280%;
+    left: 46.5%;
+    width: 112px;
+    height: 48px;
+    display: flex;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px;
+    color: #183104;
+    background-color: white;
+    box-shadow: 0 11.2px 24px -8px #0e1c0d;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+
+/* container for best Selling product*/
+
+.bestSellingText {
+    position: absolute;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 30px;
+    padding: 5px;
+    color: #183104;
+    top: 305%;
+    left: 6%;
+}
+
+/*div of best selling products*/
+.bestSellingDiv {
+    margin-top: 10px;
+    display: flex;
+    width: 88%;
+    margin-left: 100px;
+    margin-bottom: 200px;
+    height: 393.6px;
+    background-color: #7e926f;
+}
+
+
+/*contents div and cards div */
+.contentsDiv,
+.cardsDiv {
+    background-color: #566848;
+    height: 368px;
+    margin: 5px;
+}
+
+/*first div inside best selling div i.e containing desc about bonsai*/
+.bestSellingDiv .contentsDiv {
+    width: 20%;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #7e926f;
+
+}
+
+/*div' s i.e card */
+.bestSellingDiv .cardsDiv {
+    width: 80%;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: white;
+    display: flex;
+    margin: 10px;
+}
+
+/*cards on div two*/
+.cardsDiv .cards {
+    height: 344px;
+    width: 25%;
+    margin: 5px;
+}
+
+
+/*contents on contents div i.e headings and para*/
+.bonsai {
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    padding: 25px;
+    color: white;
+}
+
+.bonsaiText {
+    margin-left: 50px;
+    font-size: 22px;
+}
+
+.bonsaiParagraph {
+    justify-content: center;
+    font-size: 17px;
+    text-align: justify;
+
+}
+
+
+/* button on container 1*/
+
+.shopMore {
+    position: absolute;
+    width: 128px;
+    height: 38.4px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 5px;
+    color: #183104;
+    background-color: white;
+    border: none;
+    box-shadow: 0 11.2px 24px -8px #808456;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+
+.shopMore:hover {
+    box-shadow: 0 8px 24px -8px #272511;
+
+}
+
+/*content on container 2 i.e product name ,price etc*/
+.content {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px;
+    margin-left: 100px;
+
+}
+
+.content .price {
+    margin-top: -10px;
+    margin-left: -8px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #558032;
+
+}
+
+.content .shipping {
+    margin-bottom: 10px;
+    margin-left: -20px;
+}
+
+.content .reviews {
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.content .rating {
+    margin-left: -15px;
+}
+
+/*styling shipping text*/
+.shipping {
+    background-color: rgb(221, 221, 221);
+    border: none;
+    color: rgb(24, 49, 4);
+    letter-spacing: 0.8px;
+    border-radius: 320px;
+    width: 99.2px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 24px;
+}
+
+
+/* cards */
+
+.cartFirst,
+.cartSecond,
+.cartThird,
+.cartFourth {
+    display: none;
+}
+
+
+.cartContainerFirst,
+.cartContainerSecond,
+.cartContainerThird,
+.cartContainerFourth {
+    display: flex;
+    margin-right: -2px;
+    background-color: rgba(157, 157, 127, 0.8);
+    border-radius: 2px;
+    padding: 10px;
+    height: 50px;
+    width: 250px;
+    position: absolute;
+    top: 68.8px;
+    left: -25.6px;
+
+}
+
+.img:hover .cartFirst,
+.img:hover .cartSecond,
+.img:hover .cartThird,
+.img:hover .cartFourth {
+    display: inline;
+    display: flex;
+    top: 2460.8px;
+    position: absolute;
+    border: 2px;
+}
+
+.img:hover .cartTextFirst,
+.img:hover .cartTextSecond,
+.img:hover .cartTextThird,
+.img:hover .cartTextFourth {
+    top: 15px;
+    margin-left: 25px;
+    position: absolute;
+    left: 50px;
+    color: white;
+
+}
+
+
+.img:hover .cartTextFirst:hover,
+.img:hover .cartTextSecond:hover,
+.img:hover .cartTextThird:hover,
+.img:hover .cartTextFourth:hover {
+
+    -ms-transform: scale(1);
+    -webkit-transform: scale(0.6);
+    transform: scale(1.1);
+}
+
+
+/*on hover position*/
+/*card1*/
+.img:hover .cartFirst {
+    left: 416px;
+}
+
+/*card2*/
+.img:hover .cartSecond {
+    left: 676.16px;
+}
+
+/*card3*/
+.img:hover .cartThird {
+    left: 936px;
+}
+
+/*card 4*/
+.img:hover .cartFourth {
+    left: 1196.8px;
+}
+
+
+/*container of Featured Products*/
+/*featured text*/
+.productClass {
+    position: absolute;
+    font-family: inherit;
+    font-weight: 650;
+    font-size: 25px;
+    padding: 5px;
+    color: #183104;
+    top: 375%;
+    left: 4%;
+}
+
+/*container of featured section*/
+.featuredContainer {
+    margin-top: -80px;
+    display: flex;
+    width: 88%;
+    margin-left: 40px;
+    margin-bottom: 60px;
+    height: 393.6px;
+}
+
+/*cards on container*/
+.featuredContainer .box {
+    width: 20%;
+    margin: 20px;
+    border: 2px;
+    border-radius: 30px;
+}
+
+/*on hover the image*/
+.featuredContainer .imageFeatured:hover {
+    transform: scale(1.1);
+    transition: 0.3s all ease-in-out;
+}
+
+/*styling image on featured container*/
+.imageFeatured {
+    border: 2px;
+    border-radius: 10px;
+}
+
+/*h1 i.e name of bonsai*/
+.bonsaiName {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    text-align: left;
+    margin-left: -100px;
+    color: rgb(109, 110, 67);
+}
+
+/*price of bonsai*/
+.priceFeatured {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    margin-left: -94px;
+    color: rgb(109, 110, 67);
+}
+
+/*view more text*/
+
+.viewMore {
+    position: absolute;
+    top: 435%;
+    left: 90%;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(27, 28, 14);
+}
+
+
+.viewMore:hover {
+    position: absolute;
+    top: 435%;
+    left: 90%;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(75, 77, 50);
+    padding-left: 14px;
+}
+
+
+/*section sale*/
+
+/*timer*/
+.saleSection .textSale {
+    justify-content: center;
+    display: flex;
+    margin-top: 70px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 30px;
+    color: rgb(141, 141, 118);
+}
+
+/*timwer div*/
+.timer {
+    display: flex;
+    align-items: center;
+    margin-left: 570px;
+    border: none;
+    border-radius: 160px;
+    height: 200px;
+    width: 350px;
+}
+
+
+.timer div {
+    flex-basis: 100px;
+    margin-left: 10px;
+    color: white;
+    background-color: #b4b39e;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -80px;
+
+}
+
+.timer div p {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 40px;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.timer div p .days {
+    display: flex;
+    justify-content: center;
+}
+
+/*containers of sale section*/
+.containerSale {
+    margin: 70px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -50px;
+}
+
+/*cards inside container of sale section*/
+.cardSale {
+    padding: 40px;
+    box-sizing: border-box;
+    border: 2px;
+    margin: 14px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.contentSale {
+    margin: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 650;
+    color: #444326;
+}
+
+/*footer*/
+
+.containerFooter {
+    max-width: 1170px;
+    margin: auto;
+    padding-top: 30px;
+    height: 300px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #969581;
+    padding: 20px 0;
+
+}
+
+.footerClass {
+    width: 25%;
+    padding: 5 15px;
+    margin-left: 80px;
+}
+
+.footerClass h4 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footerClass ul li a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #f3f3f3;
+    display: block;
+    transition: all 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.footerClass ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footerClass .socialLinks li {
+    display: flex;
+    cursor: pointer;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    margin-left: 320px;
+    padding: 20px;
+    color: #454235;
+    margin-top: 50px;
+}
